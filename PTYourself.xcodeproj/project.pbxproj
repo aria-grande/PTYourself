@@ -13,7 +13,6 @@
 		DECFBD941C9C4800006B1AE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DECFBD931C9C4800006B1AE6 /* Assets.xcassets */; };
 		DECFBD971C9C4800006B1AE6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DECFBD951C9C4800006B1AE6 /* LaunchScreen.storyboard */; };
 		DECFBDA21C9C4800006B1AE6 /* PTYourselfTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECFBDA11C9C4800006B1AE6 /* PTYourselfTests.swift */; };
-		DECFBDAD1C9C4800006B1AE6 /* PTYourselfUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECFBDAC1C9C4800006B1AE6 /* PTYourselfUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,8 +44,6 @@
 		DECFBDA11C9C4800006B1AE6 /* PTYourselfTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTYourselfTests.swift; sourceTree = "<group>"; };
 		DECFBDA31C9C4800006B1AE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DECFBDA81C9C4800006B1AE6 /* PTYourselfUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PTYourselfUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DECFBDAC1C9C4800006B1AE6 /* PTYourselfUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTYourselfUITests.swift; sourceTree = "<group>"; };
-		DECFBDAE1C9C4800006B1AE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +76,6 @@
 			children = (
 				DECFBD8B1C9C4800006B1AE6 /* PTYourself */,
 				DECFBDA01C9C4800006B1AE6 /* PTYourselfTests */,
-				DECFBDAB1C9C4800006B1AE6 /* PTYourselfUITests */,
 				DECFBD8A1C9C4800006B1AE6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -114,15 +110,6 @@
 				DECFBDA31C9C4800006B1AE6 /* Info.plist */,
 			);
 			path = PTYourselfTests;
-			sourceTree = "<group>";
-		};
-		DECFBDAB1C9C4800006B1AE6 /* PTYourselfUITests */ = {
-			isa = PBXGroup;
-			children = (
-				DECFBDAC1C9C4800006B1AE6 /* PTYourselfUITests.swift */,
-				DECFBDAE1C9C4800006B1AE6 /* Info.plist */,
-			);
-			path = PTYourselfUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,7 +263,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DECFBDAD1C9C4800006B1AE6 /* PTYourselfUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
