@@ -13,6 +13,9 @@
 		DECFBD941C9C4800006B1AE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DECFBD931C9C4800006B1AE6 /* Assets.xcassets */; };
 		DECFBD971C9C4800006B1AE6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DECFBD951C9C4800006B1AE6 /* LaunchScreen.storyboard */; };
 		DECFBDA21C9C4800006B1AE6 /* PTYourselfTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECFBDA11C9C4800006B1AE6 /* PTYourselfTests.swift */; };
+		DECFBDD11C9DB854006B1AE6 /* exercisingWoman.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DECFBDD01C9DB854006B1AE6 /* exercisingWoman.jpg */; };
+		DECFBDD51C9DB91B006B1AE6 /* bodySizeMeasure.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DECFBDD41C9DB91B006B1AE6 /* bodySizeMeasure.jpg */; };
+		DECFBDD81C9DBDCB006B1AE6 /* test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DECFBDD71C9DBDCB006B1AE6 /* test.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		DECFBDA11C9C4800006B1AE6 /* PTYourselfTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTYourselfTests.swift; sourceTree = "<group>"; };
 		DECFBDA31C9C4800006B1AE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DECFBDA81C9C4800006B1AE6 /* PTYourselfUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PTYourselfUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DECFBDD01C9DB854006B1AE6 /* exercisingWoman.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = exercisingWoman.jpg; sourceTree = "<group>"; };
+		DECFBDD41C9DB91B006B1AE6 /* bodySizeMeasure.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bodySizeMeasure.jpg; sourceTree = "<group>"; };
+		DECFBDD71C9DBDCB006B1AE6 /* test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,9 +102,8 @@
 				DECFBD8C1C9C4800006B1AE6 /* AppDelegate.swift */,
 				DECFBD8E1C9C4800006B1AE6 /* ViewController.swift */,
 				DECFBD901C9C4800006B1AE6 /* Main.storyboard */,
-				DECFBD931C9C4800006B1AE6 /* Assets.xcassets */,
-				DECFBD951C9C4800006B1AE6 /* LaunchScreen.storyboard */,
-				DECFBD981C9C4800006B1AE6 /* Info.plist */,
+				DECFBDD61C9DBAD0006B1AE6 /* Supporting */,
+				DECFBDBB1C9C4F4F006B1AE6 /* Resources */,
 			);
 			path = PTYourself;
 			sourceTree = "<group>";
@@ -110,6 +115,26 @@
 				DECFBDA31C9C4800006B1AE6 /* Info.plist */,
 			);
 			path = PTYourselfTests;
+			sourceTree = "<group>";
+		};
+		DECFBDBB1C9C4F4F006B1AE6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DECFBDD71C9DBDCB006B1AE6 /* test.jpg */,
+				DECFBDD41C9DB91B006B1AE6 /* bodySizeMeasure.jpg */,
+				DECFBDD01C9DB854006B1AE6 /* exercisingWoman.jpg */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		DECFBDD61C9DBAD0006B1AE6 /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				DECFBD931C9C4800006B1AE6 /* Assets.xcassets */,
+				DECFBD951C9C4800006B1AE6 /* LaunchScreen.storyboard */,
+				DECFBD981C9C4800006B1AE6 /* Info.plist */,
+			);
+			name = Supporting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,7 +246,10 @@
 			files = (
 				DECFBD971C9C4800006B1AE6 /* LaunchScreen.storyboard in Resources */,
 				DECFBD941C9C4800006B1AE6 /* Assets.xcassets in Resources */,
+				DECFBDD11C9DB854006B1AE6 /* exercisingWoman.jpg in Resources */,
+				DECFBDD51C9DB91B006B1AE6 /* bodySizeMeasure.jpg in Resources */,
 				DECFBD921C9C4800006B1AE6 /* Main.storyboard in Resources */,
+				DECFBDD81C9DBDCB006B1AE6 /* test.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,6 +499,7 @@
 				DECFBDB31C9C4800006B1AE6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DECFBDB41C9C4800006B1AE6 /* Build configuration list for PBXNativeTarget "PTYourselfTests" */ = {
 			isa = XCConfigurationList;
@@ -479,6 +508,7 @@
 				DECFBDB61C9C4800006B1AE6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DECFBDB71C9C4800006B1AE6 /* Build configuration list for PBXNativeTarget "PTYourselfUITests" */ = {
 			isa = XCConfigurationList;
@@ -487,6 +517,7 @@
 				DECFBDB91C9C4800006B1AE6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
