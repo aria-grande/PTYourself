@@ -5,6 +5,12 @@ class Photo {
     private var description:String
     private var src:String
     
+    init() {
+        self.date = NSDate()
+        self.description = ""
+        self.src = ""
+    }
+    
     init(date:NSDate, description:String, src:String) {
         self.date = date
         self.description = description

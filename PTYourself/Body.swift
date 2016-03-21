@@ -4,6 +4,11 @@ class Body {
     private var height:Double
     private var weight:Double
     
+    init() {
+        self.height = 0
+        self.weight = 0
+    }
+    
     init(height:Double, weight:Double) {
         self.height = height
         self.weight = weight

@@ -15,7 +15,13 @@
 		DECFBDA21C9C4800006B1AE6 /* PTYourselfTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECFBDA11C9C4800006B1AE6 /* PTYourselfTests.swift */; };
 		DECFBDD11C9DB854006B1AE6 /* exercisingWoman.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DECFBDD01C9DB854006B1AE6 /* exercisingWoman.jpg */; };
 		DECFBDD51C9DB91B006B1AE6 /* bodySizeMeasure.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DECFBDD41C9DB91B006B1AE6 /* bodySizeMeasure.jpg */; };
-		DECFBDD81C9DBDCB006B1AE6 /* test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DECFBDD71C9DBDCB006B1AE6 /* test.jpg */; };
+		DECFBDDB1C9EE1D8006B1AE6 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECFBDDA1C9EE1D8006B1AE6 /* Exercise.swift */; };
+		DECFBDE01C9EF2EC006B1AE6 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECFBDDF1C9EF2EC006B1AE6 /* Album.swift */; };
+		DECFBDE21C9EF309006B1AE6 /* Body.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECFBDE11C9EF309006B1AE6 /* Body.swift */; };
+		DECFBDE71C9EF356006B1AE6 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECFBDE61C9EF356006B1AE6 /* Photo.swift */; };
+		DECFBDE91C9EF369006B1AE6 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECFBDE81C9EF369006B1AE6 /* Record.swift */; };
+		DECFBDEB1C9EF39B006B1AE6 /* Root.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECFBDEA1C9EF39B006B1AE6 /* Root.swift */; };
+		DECFBDED1CA0026D006B1AE6 /* BodyInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECFBDEC1CA0026D006B1AE6 /* BodyInformationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,9 +53,15 @@
 		DECFBDA11C9C4800006B1AE6 /* PTYourselfTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTYourselfTests.swift; sourceTree = "<group>"; };
 		DECFBDA31C9C4800006B1AE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DECFBDA81C9C4800006B1AE6 /* PTYourselfUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PTYourselfUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DECFBDD01C9DB854006B1AE6 /* exercisingWoman.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = exercisingWoman.jpg; sourceTree = "<group>"; };
-		DECFBDD41C9DB91B006B1AE6 /* bodySizeMeasure.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bodySizeMeasure.jpg; sourceTree = "<group>"; };
-		DECFBDD71C9DBDCB006B1AE6 /* test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test.jpg; sourceTree = "<group>"; };
+		DECFBDD01C9DB854006B1AE6 /* exercisingWoman.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = exercisingWoman.jpg; path = PTYourself/exercisingWoman.jpg; sourceTree = "<group>"; };
+		DECFBDD41C9DB91B006B1AE6 /* bodySizeMeasure.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bodySizeMeasure.jpg; path = PTYourself/bodySizeMeasure.jpg; sourceTree = "<group>"; };
+		DECFBDDA1C9EE1D8006B1AE6 /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+		DECFBDDF1C9EF2EC006B1AE6 /* Album.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		DECFBDE11C9EF309006B1AE6 /* Body.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Body.swift; sourceTree = "<group>"; };
+		DECFBDE61C9EF356006B1AE6 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		DECFBDE81C9EF369006B1AE6 /* Record.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
+		DECFBDEA1C9EF39B006B1AE6 /* Root.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Root.swift; sourceTree = "<group>"; };
+		DECFBDEC1CA0026D006B1AE6 /* BodyInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyInformationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,8 +114,10 @@
 				DECFBD8C1C9C4800006B1AE6 /* AppDelegate.swift */,
 				DECFBD8E1C9C4800006B1AE6 /* ViewController.swift */,
 				DECFBD901C9C4800006B1AE6 /* Main.storyboard */,
+				DECFBDD91C9DD08E006B1AE6 /* Resources */,
 				DECFBDD61C9DBAD0006B1AE6 /* Supporting */,
-				DECFBDBB1C9C4F4F006B1AE6 /* Resources */,
+				DECFBDDE1C9EF2C7006B1AE6 /* DTO */,
+				DECFBDEC1CA0026D006B1AE6 /* BodyInformationViewController.swift */,
 			);
 			path = PTYourself;
 			sourceTree = "<group>";
@@ -117,16 +131,6 @@
 			path = PTYourselfTests;
 			sourceTree = "<group>";
 		};
-		DECFBDBB1C9C4F4F006B1AE6 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				DECFBDD71C9DBDCB006B1AE6 /* test.jpg */,
-				DECFBDD41C9DB91B006B1AE6 /* bodySizeMeasure.jpg */,
-				DECFBDD01C9DB854006B1AE6 /* exercisingWoman.jpg */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
 		DECFBDD61C9DBAD0006B1AE6 /* Supporting */ = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +139,29 @@
 				DECFBD981C9C4800006B1AE6 /* Info.plist */,
 			);
 			name = Supporting;
+			sourceTree = "<group>";
+		};
+		DECFBDD91C9DD08E006B1AE6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DECFBDD41C9DB91B006B1AE6 /* bodySizeMeasure.jpg */,
+				DECFBDD01C9DB854006B1AE6 /* exercisingWoman.jpg */,
+			);
+			name = Resources;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		DECFBDDE1C9EF2C7006B1AE6 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				DECFBDEA1C9EF39B006B1AE6 /* Root.swift */,
+				DECFBDE11C9EF309006B1AE6 /* Body.swift */,
+				DECFBDDA1C9EE1D8006B1AE6 /* Exercise.swift */,
+				DECFBDE81C9EF369006B1AE6 /* Record.swift */,
+				DECFBDDF1C9EF2EC006B1AE6 /* Album.swift */,
+				DECFBDE61C9EF356006B1AE6 /* Photo.swift */,
+			);
+			name = DTO;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,7 +276,6 @@
 				DECFBDD11C9DB854006B1AE6 /* exercisingWoman.jpg in Resources */,
 				DECFBDD51C9DB91B006B1AE6 /* bodySizeMeasure.jpg in Resources */,
 				DECFBD921C9C4800006B1AE6 /* Main.storyboard in Resources */,
-				DECFBDD81C9DBDCB006B1AE6 /* test.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,8 +300,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DECFBDE71C9EF356006B1AE6 /* Photo.swift in Sources */,
+				DECFBDEB1C9EF39B006B1AE6 /* Root.swift in Sources */,
 				DECFBD8F1C9C4800006B1AE6 /* ViewController.swift in Sources */,
 				DECFBD8D1C9C4800006B1AE6 /* AppDelegate.swift in Sources */,
+				DECFBDDB1C9EE1D8006B1AE6 /* Exercise.swift in Sources */,
+				DECFBDED1CA0026D006B1AE6 /* BodyInformationViewController.swift in Sources */,
+				DECFBDE91C9EF369006B1AE6 /* Record.swift in Sources */,
+				DECFBDE01C9EF2EC006B1AE6 /* Album.swift in Sources */,
+				DECFBDE21C9EF309006B1AE6 /* Body.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

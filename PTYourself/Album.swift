@@ -4,9 +4,22 @@ class Album {
     private var inbody:[Photo]
     private var body:[Photo]
     
+    init() {
+        self.inbody = []
+        self.body = []
+    }
+    
     init(inbody:[Photo], body:[Photo]) {
         self.inbody = inbody
         self.body = body
+    }
+    
+    func addInbodyPhoto(inbodyPhoto:Photo) {
+        inbody.append(inbodyPhoto)
+    }
+    
+    func addBodyPhoto(bodyPhoto:Photo) {
+        body.append(bodyPhoto)
     }
     
     func getInbodyPhotos() -> [Photo] {

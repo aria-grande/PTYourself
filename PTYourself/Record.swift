@@ -10,6 +10,12 @@ class Record {
     private var memo:String
     private var missionCompleteRate:Int
     
+    init() {
+        self.date = NSDate()
+        self.memo = ""
+        self.missionCompleteRate = 0
+    }
+    
     init(date:NSDate, missionCompleteRate:Int, memo:String) {
         self.date = date
         self.memo = memo
