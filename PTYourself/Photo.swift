@@ -1,31 +1,26 @@
 import Foundation
+import RealmSwift
 
-class Photo {
-    private var date:NSDate
-    private var description:String
-    private var src:String
+class Photo:Object {
+    dynamic var date:NSDate = NSDate()
+    dynamic var desc:String = ""
+    dynamic var src:String = ""
     
-    init() {
-        self.date = NSDate()
-        self.description = ""
-        self.src = ""
-    }
-    
-    init(date:NSDate, description:String, src:String) {
+    convenience init(date:NSDate, desc:String, src:String) {
+        self.init()
         self.date = date
-        self.description = description
+        self.desc = desc
         self.src = src
     }
-    
-    func getDate() -> NSDate {
-        return self.date
-    }
-    
-    func getDescription() -> String {
-        return self.description
-    }
-    
-    func getSrc() -> String {
-        return self.src
-    }
+//    func getDate() -> NSDate {
+//        return self.date
+//    }
+//    
+//    func getDesc() -> String {
+//        return self.description
+//    }
+//    
+//    func getSrc() -> String {
+//        return self.src
+//    }
 }

@@ -1,17 +1,14 @@
 import Foundation
+import RealmSwift
 
-class Album {
-    private var inbody:[Photo]
-    private var body:[Photo]
+class Album:Object {
+    let inbody = List<Photo>()
+    let body = List<Photo>()
     
-    init() {
-        self.inbody = []
-        self.body = []
-    }
-    
-    init(inbody:[Photo], body:[Photo]) {
-        self.inbody = inbody
-        self.body = body
+    convenience init(inbody:Photo, body:Photo) {
+        self.init()
+        addInbodyPhoto(inbody)
+        addBodyPhoto(body)
     }
     
     func addInbodyPhoto(inbodyPhoto:Photo) {
@@ -22,11 +19,11 @@ class Album {
         body.append(bodyPhoto)
     }
     
-    func getInbodyPhotos() -> [Photo] {
-        return self.inbody
-    }
-    
-    func getBodyPhotos() -> [Photo] {
-        return self.body
-    }
+//    func getInbodyPhotos() -> List<Photo> {
+//        return self.inbody
+//    }
+//    
+//    func getBodyPhotos() -> List<Photo> {
+//        return self.body
+//    }
 }

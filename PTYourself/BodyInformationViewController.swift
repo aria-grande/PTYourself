@@ -1,8 +1,10 @@
 import UIKit
+import RealmSwift
 
 class BodyInformationViewController: UIViewController {
 
-    private var data:Root = Root.sharedInstance
+    private var data:Root = Root();
+    private let realm = try! Realm()
     
     @IBOutlet var alertMessage: UILabel!
     @IBOutlet var height: UITextField!
@@ -10,8 +12,8 @@ class BodyInformationViewController: UIViewController {
     
     @IBAction func save(sender: UIButton) {
         if let h = Double(height.text!), w = Double(weight.text!) {
-            let body = Body(height: h, weight: w)
-            data.setBodyInformation(body)
+            
+            ModelManager.writeBodyInformation(Body(height: h, weight: w))
             alertMessage.text = ""
             
             [self.navigationController?.popViewControllerAnimated(true)]
@@ -24,10 +26,12 @@ class BodyInformationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let body = data.getBodyInformation()
-        height.text = String(body.getHeight())
-        weight.text = String(body.getWeight())
+        data = ModelManager.getData()
+        print(data)
         
+        let body = data.bodyInformation
+        height.text = String(body!.height)
+        weight.text = String(body!.weight)
     }
 
     override func didReceiveMemoryWarning() {

@@ -1,24 +1,20 @@
 import Foundation
+import RealmSwift
 
-class Exercise {
-    private var name:String
-    private var did:Bool
+class Exercise:Object {
+    dynamic var name:String = ""
+    dynamic var did:Bool = false
     
-    init() {
-        self.name = ""
-        self.did = false
-    }
-    
-    init(name:String, did:Bool) {
+    convenience init(name:String, did:Bool) {
+        self.init()
         self.name = name
         self.did = did
     }
-    
-    func getName() -> String {
-        return self.name
-    }
-    
-    func getDid() -> Bool {
-        return self.did
-    }
+//    func getName() -> String {
+//        return self.name
+//    }
+//    
+//    func getDid() -> Bool {
+//        return self.did
+//    }
 }
