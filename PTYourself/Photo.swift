@@ -12,15 +12,4 @@ class Photo:Object {
         self.desc = desc
         self.src = src
     }
-//    func getDate() -> NSDate {
-//        return self.date
-//    }
-//    
-//    func getDesc() -> String {
-//        return self.description
-//    }
-//    
-//    func getSrc() -> String {
-//        return self.src
-//    }
 }

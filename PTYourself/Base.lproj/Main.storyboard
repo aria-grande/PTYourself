@@ -104,50 +104,51 @@
         <!--InBody-->
         <scene sceneID="haC-k7-wxq">
             <objects>
-                <collectionViewController storyboardIdentifier="InbodyVC" id="bJh-gv-x3p" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="InbodyVC" id="bJh-gv-x3p" customClass="InbodyCollectionViewController" customModule="PTYourself" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="InbodyView" dataMode="prototypes" id="js1-aK-ro3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="q7W-vH-9Xv">
-                            <size key="itemSize" width="568" height="485"/>
+                            <size key="itemSize" width="263" height="276"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="InbodyCollectionViewCell" reuseIdentifier="inbodyCollectionCell" id="4eL-z6-oEa">
-                                <rect key="frame" x="16" y="64" width="568" height="485"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="InbodyCollectionViewCell" reuseIdentifier="inbodyCollectionCell" id="4eL-z6-oEa" customClass="InbodyCollectionViewCell" customModule="PTYourself" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="263" height="276"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="568" height="485"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="263" height="276"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bodySizeMeasure.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="uW7-BL-p3o">
-                                            <rect key="frame" x="0.0" y="8" width="348" height="485"/>
+                                            <rect key="frame" x="0.0" y="10" width="263" height="233"/>
                                         </imageView>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="CsU-dj-94D">
-                                            <rect key="frame" x="363" y="61" width="186" height="392"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="186" id="P9W-90-eay"/>
-                                            </constraints>
-                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                        </textView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cmb-0G-n00">
+                                            <rect key="frame" x="1" y="247" width="262" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="uW7-BL-p3o" firstAttribute="height" secondItem="4eL-z6-oEa" secondAttribute="height" id="85u-HD-88e"/>
-                                    <constraint firstItem="CsU-dj-94D" firstAttribute="top" secondItem="4eL-z6-oEa" secondAttribute="topMargin" constant="53" id="8QU-wq-S8e"/>
-                                    <constraint firstItem="uW7-BL-p3o" firstAttribute="top" secondItem="4eL-z6-oEa" secondAttribute="topMargin" id="AuG-vJ-QAB"/>
-                                    <constraint firstAttribute="bottomMargin" secondItem="CsU-dj-94D" secondAttribute="bottom" constant="24" id="PFA-qv-fh3"/>
-                                    <constraint firstAttribute="trailingMargin" secondItem="CsU-dj-94D" secondAttribute="trailing" constant="11" id="VZQ-aO-CMr"/>
-                                    <constraint firstItem="CsU-dj-94D" firstAttribute="leading" secondItem="uW7-BL-p3o" secondAttribute="trailing" constant="15" id="ari-aW-5db"/>
-                                    <constraint firstItem="uW7-BL-p3o" firstAttribute="leading" secondItem="4eL-z6-oEa" secondAttribute="leading" id="epD-gn-Kqs"/>
+                                    <constraint firstItem="cmb-0G-n00" firstAttribute="top" secondItem="uW7-BL-p3o" secondAttribute="bottom" constant="4" id="78H-OM-FZ4"/>
+                                    <constraint firstItem="uW7-BL-p3o" firstAttribute="centerY" secondItem="4eL-z6-oEa" secondAttribute="centerY" constant="-11.5" id="9ju-Y4-gFu"/>
+                                    <constraint firstItem="uW7-BL-p3o" firstAttribute="leading" secondItem="4eL-z6-oEa" secondAttribute="leading" id="EcX-Iz-MIs"/>
+                                    <constraint firstItem="uW7-BL-p3o" firstAttribute="width" secondItem="4eL-z6-oEa" secondAttribute="width" id="P0j-M3-F13"/>
+                                    <constraint firstItem="cmb-0G-n00" firstAttribute="width" secondItem="uW7-BL-p3o" secondAttribute="width" constant="-1" id="qc2-nM-9nb"/>
+                                    <constraint firstItem="uW7-BL-p3o" firstAttribute="top" secondItem="4eL-z6-oEa" secondAttribute="topMargin" constant="2" id="rPQ-h5-VA2"/>
+                                    <constraint firstItem="uW7-BL-p3o" firstAttribute="trailing" secondItem="cmb-0G-n00" secondAttribute="trailing" id="ypC-c1-E4X"/>
                                 </constraints>
+                                <size key="customSize" width="263" height="276"/>
+                                <connections>
+                                    <outlet property="desc" destination="cmb-0G-n00" id="jUt-8m-6qs"/>
+                                    <outlet property="photo" destination="uW7-BL-p3o" id="3es-DO-Az9"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -155,16 +156,20 @@
                             <outlet property="delegate" destination="bJh-gv-x3p" id="lUW-hT-vMA"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="InBody" id="2yA-dM-1R3"/>
+                    <navigationItem key="navigationItem" title="InBody" id="2yA-dM-1R3">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Q1z-XW-zRD"/>
+                    </navigationItem>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="600"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BjT-qs-G08" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2230" y="-37"/>
+            <point key="canvasLocation" x="2229" y="-37"/>
         </scene>
         <!--My Beautiful Body-->
         <scene sceneID="obz-8i-MU7">
             <objects>
-                <collectionViewController storyboardIdentifier="BodyPhotoVC" id="eyi-1G-UVN" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="BodyPhotoVC" id="eyi-1G-UVN" customClass="BodyPhotoCollectionViewController" customModule="PTYourself" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="BodyPhotoView" dataMode="prototypes" id="FzR-9R-auB">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -176,7 +181,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="BodyPhotoViewCell" reuseIdentifier="bodyCollectionCell" id="gAP-c6-NEh">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="BodyPhotoViewCell" reuseIdentifier="bodyCollectionCell" id="gAP-c6-NEh" customClass="BodyPhotoCollectionViewCell" customModule="PTYourself" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="64" width="292" height="271"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -207,6 +212,10 @@
                                     <constraint firstItem="hBh-ar-ds8" firstAttribute="top" secondItem="gAP-c6-NEh" secondAttribute="topMargin" id="paq-Yn-aZv"/>
                                     <constraint firstItem="dgH-Hp-16o" firstAttribute="top" secondItem="hBh-ar-ds8" secondAttribute="bottom" constant="18" id="slk-Ar-1dL"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="desc" destination="dgH-Hp-16o" id="g2z-Ou-Asa"/>
+                                    <outlet property="photo" destination="hBh-ar-ds8" id="BpV-r7-AvI"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -214,7 +223,9 @@
                             <outlet property="delegate" destination="eyi-1G-UVN" id="eZi-f5-jcj"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="My Beautiful Body" id="q2L-VD-Guk"/>
+                    <navigationItem key="navigationItem" title="My Beautiful Body" id="q2L-VD-Guk">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="grp-hp-lDy"/>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aEw-21-wD7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
