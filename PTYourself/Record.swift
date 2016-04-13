@@ -7,25 +7,41 @@ import Foundation
 import RealmSwift
 
 class Record:Object {
-    dynamic var date:NSDate = NSDate()
+    dynamic var date:String = ""
     dynamic var memo:String = ""
     dynamic var missionCompleteRate:Int = 0
+    let exerciseList = List<Exercise>()
     
-    convenience init(date:NSDate, memo:String, missionCompleteRate:Int) {
+    convenience init(date:String, memo:String, missionCompleteRate:Int) {
         self.init()
         self.date = date
         self.memo = memo
         self.missionCompleteRate = missionCompleteRate
+        self.exerciseList.removeAll()
+        self.exerciseList.appendContentsOf(ModelManager.getExerciseList())
     }
-//    func getMemo() -> String {
-//        return self.memo
-//    }
-//    
-//    func getDate() -> NSDate {
-//        return self.date
-//    }
-//    
-//    func getMissionCompleteRate() -> Int {
-//        return self.missionCompleteRate
-//    }
+    
+    convenience init(date:String, memo:String, missionCompleteRate:Int, exerciseList:List<Exercise>) {
+        self.init()
+        self.date = date
+        self.memo = memo
+        self.missionCompleteRate = missionCompleteRate
+        self.exerciseList.removeAll()
+        self.exerciseList.appendContentsOf(exerciseList)
+    }
+    
+    func updateExerciseRecord(exerciseDict:[String:Bool]) {
+        self.exerciseList.removeAll()
+        for (name, did) in exerciseDict {
+            self.exerciseList.append(Exercise(name:name, did:did))
+        }
+    }
+    
+    static func convert(exerciseDict:[String:Bool]) -> List<Exercise> {
+        let list = List<Exercise>()
+        for (name, did) in exerciseDict {
+            list.append(Exercise(name: name, did: did))
+        }
+        return list
+    }
 }

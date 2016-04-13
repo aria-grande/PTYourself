@@ -10,11 +10,4 @@ class Exercise:Object {
         self.name = name
         self.did = did
     }
-//    func getName() -> String {
-//        return self.name
-//    }
-//    
-//    func getDid() -> Bool {
-//        return self.did
-//    }
 }

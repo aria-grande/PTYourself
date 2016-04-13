@@ -18,12 +18,4 @@ class Album:Object {
     func addBodyPhoto(bodyPhoto:Photo) {
         body.append(bodyPhoto)
     }
-    
-//    func getInbodyPhotos() -> List<Photo> {
-//        return self.inbody
-//    }
-//    
-//    func getBodyPhotos() -> List<Photo> {
-//        return self.body
-//    }
 }

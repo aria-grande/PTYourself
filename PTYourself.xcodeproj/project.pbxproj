@@ -12,6 +12,11 @@
 		DE8D1A251CB490ED009F9C75 /* ExerciseRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D1A241CB490ED009F9C75 /* ExerciseRecordViewController.swift */; };
 		DE8D1A271CB5EC16009F9C75 /* ModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D1A261CB5EC16009F9C75 /* ModelManager.swift */; };
 		DE8D1A2B1CB65C54009F9C75 /* AddNewExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D1A2A1CB65C54009F9C75 /* AddNewExerciseViewController.swift */; };
+		DE8D1A2D1CB65E5E009F9C75 /* InbodyCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D1A2C1CB65E5E009F9C75 /* InbodyCollectionViewController.swift */; };
+		DE8D1A2F1CB695AB009F9C75 /* InbodyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D1A2E1CB695AB009F9C75 /* InbodyCollectionViewCell.swift */; };
+		DE8D1A321CB743F6009F9C75 /* BodyPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D1A311CB743F6009F9C75 /* BodyPhotoCollectionViewCell.swift */; };
+		DE8D1A341CB7445A009F9C75 /* BodyPhotoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D1A331CB7445A009F9C75 /* BodyPhotoCollectionViewController.swift */; };
+		DE8D1A381CB74A89009F9C75 /* RecordExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D1A371CB74A89009F9C75 /* RecordExerciseViewController.swift */; };
 		DECFBD8D1C9C4800006B1AE6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECFBD8C1C9C4800006B1AE6 /* AppDelegate.swift */; };
 		DECFBD8F1C9C4800006B1AE6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECFBD8E1C9C4800006B1AE6 /* ViewController.swift */; };
 		DECFBD921C9C4800006B1AE6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DECFBD901C9C4800006B1AE6 /* Main.storyboard */; };
@@ -71,6 +76,11 @@
 		DE8D1A241CB490ED009F9C75 /* ExerciseRecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseRecordViewController.swift; sourceTree = "<group>"; };
 		DE8D1A261CB5EC16009F9C75 /* ModelManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelManager.swift; sourceTree = "<group>"; };
 		DE8D1A2A1CB65C54009F9C75 /* AddNewExerciseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewExerciseViewController.swift; sourceTree = "<group>"; };
+		DE8D1A2C1CB65E5E009F9C75 /* InbodyCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InbodyCollectionViewController.swift; sourceTree = "<group>"; };
+		DE8D1A2E1CB695AB009F9C75 /* InbodyCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InbodyCollectionViewCell.swift; sourceTree = "<group>"; };
+		DE8D1A311CB743F6009F9C75 /* BodyPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		DE8D1A331CB7445A009F9C75 /* BodyPhotoCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyPhotoCollectionViewController.swift; sourceTree = "<group>"; };
+		DE8D1A371CB74A89009F9C75 /* RecordExerciseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordExerciseViewController.swift; sourceTree = "<group>"; };
 		DECFBD891C9C4800006B1AE6 /* PTYourself.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PTYourself.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DECFBD8C1C9C4800006B1AE6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DECFBD8E1C9C4800006B1AE6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +141,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DE8D1A301CB7363E009F9C75 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				DE8D1A2E1CB695AB009F9C75 /* InbodyCollectionViewCell.swift */,
+				DECFBDF31CA0F70D006B1AE6 /* ExerciseTableViewCell.swift */,
+				DE8D1A311CB743F6009F9C75 /* BodyPhotoCollectionViewCell.swift */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
 		DECFBD801C9C4800006B1AE6 = {
 			isa = PBXGroup;
 			children = (
@@ -155,14 +175,13 @@
 		DECFBD8B1C9C4800006B1AE6 /* PTYourself */ = {
 			isa = PBXGroup;
 			children = (
+				DE8D1A301CB7363E009F9C75 /* Cell */,
 				DECFBDEE1CA02C21006B1AE6 /* Controller */,
 				DECFBD8C1C9C4800006B1AE6 /* AppDelegate.swift */,
 				DECFBD901C9C4800006B1AE6 /* Main.storyboard */,
-				DECFBDF31CA0F70D006B1AE6 /* ExerciseTableViewCell.swift */,
 				DECFBDDE1C9EF2C7006B1AE6 /* Model */,
 				DECFBDD91C9DD08E006B1AE6 /* Resources */,
 				DECFBDD61C9DBAD0006B1AE6 /* Supporting */,
-				DE8D1A261CB5EC16009F9C75 /* ModelManager.swift */,
 			);
 			path = PTYourself;
 			sourceTree = "<group>";
@@ -199,6 +218,7 @@
 		DECFBDDE1C9EF2C7006B1AE6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DE8D1A261CB5EC16009F9C75 /* ModelManager.swift */,
 				DECFBDEA1C9EF39B006B1AE6 /* Root.swift */,
 				DECFBDE11C9EF309006B1AE6 /* Body.swift */,
 				DECFBDDA1C9EE1D8006B1AE6 /* Exercise.swift */,
@@ -217,6 +237,9 @@
 				DECFBDF11CA0F305006B1AE6 /* ExerciseListViewController.swift */,
 				DE8D1A241CB490ED009F9C75 /* ExerciseRecordViewController.swift */,
 				DE8D1A2A1CB65C54009F9C75 /* AddNewExerciseViewController.swift */,
+				DE8D1A2C1CB65E5E009F9C75 /* InbodyCollectionViewController.swift */,
+				DE8D1A331CB7445A009F9C75 /* BodyPhotoCollectionViewController.swift */,
+				DE8D1A371CB74A89009F9C75 /* RecordExerciseViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -487,16 +510,21 @@
 				DECFBDEB1C9EF39B006B1AE6 /* Root.swift in Sources */,
 				DECFBDF41CA0F70D006B1AE6 /* ExerciseTableViewCell.swift in Sources */,
 				DE8D1A251CB490ED009F9C75 /* ExerciseRecordViewController.swift in Sources */,
+				DE8D1A2D1CB65E5E009F9C75 /* InbodyCollectionViewController.swift in Sources */,
+				DE8D1A2F1CB695AB009F9C75 /* InbodyCollectionViewCell.swift in Sources */,
 				DECFBD8F1C9C4800006B1AE6 /* ViewController.swift in Sources */,
 				DECFBD8D1C9C4800006B1AE6 /* AppDelegate.swift in Sources */,
 				DECFBDDB1C9EE1D8006B1AE6 /* Exercise.swift in Sources */,
 				DE8D1A2B1CB65C54009F9C75 /* AddNewExerciseViewController.swift in Sources */,
 				DECFBDF21CA0F305006B1AE6 /* ExerciseListViewController.swift in Sources */,
+				DE8D1A341CB7445A009F9C75 /* BodyPhotoCollectionViewController.swift in Sources */,
+				DE8D1A321CB743F6009F9C75 /* BodyPhotoCollectionViewCell.swift in Sources */,
 				DE8D1A271CB5EC16009F9C75 /* ModelManager.swift in Sources */,
 				DECFBDED1CA0026D006B1AE6 /* BodyInformationViewController.swift in Sources */,
 				DECFBDE91C9EF369006B1AE6 /* Record.swift in Sources */,
 				DECFBDE01C9EF2EC006B1AE6 /* Album.swift in Sources */,
 				DECFBDE21C9EF309006B1AE6 /* Body.swift in Sources */,
+				DE8D1A381CB74A89009F9C75 /* RecordExerciseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -641,6 +669,7 @@
 					"$(PROJECT_DIR)/PTYourself/Frameworks",
 				);
 				INFOPLIST_FILE = PTYourself/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = areeoh.PTYourself;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -657,6 +686,7 @@
 					"$(PROJECT_DIR)/PTYourself/Frameworks",
 				);
 				INFOPLIST_FILE = PTYourself/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = areeoh.PTYourself;
 				PRODUCT_NAME = "$(TARGET_NAME)";

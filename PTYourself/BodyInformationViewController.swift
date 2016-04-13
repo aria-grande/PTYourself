@@ -12,7 +12,6 @@ class BodyInformationViewController: UIViewController {
     
     @IBAction func save(sender: UIButton) {
         if let h = Double(height.text!), w = Double(weight.text!) {
-            
             ModelManager.writeBodyInformation(Body(height: h, weight: w))
             alertMessage.text = ""
             
