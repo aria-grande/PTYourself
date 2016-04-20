@@ -12,16 +12,22 @@ class ModelManager {
         return format.stringFromDate(todayDateTime)
     }
     
+    static func convertURL(url:String) -> NSData {
+        return NSData(contentsOfURL: NSURL(string: url)!)!
+    }
     static func setSampleData() {
-        ModelManager.removeAll()
+        let realm = try! Realm()
+        if realm.objects(Root.self).count > 0 {
+            print(realm.objects(Root.self))
+            return
+        }
         
-        let inbody = Photo(date: NSDate(), desc: "my beautiful body", src: "https://pub.chosun.com/editor/cheditor_new/attach/IE1KGC6OQPOPFN5JCWIB.jpg")
-        let body = Photo(date: NSDate(), desc: "inbody result!", src: "https://pub.chosun.com/editor/cheditor_new/attach/IE1KGC6OQPOPFN5JCWIB.jpg")
+        let inbody = Photo(date: NSDate(), desc: "my beautiful body", data: convertURL("https://pub.chosun.com/editor/cheditor_new/attach/IE1KGC6OQPOPFN5JCWIB.jpg"))
+        let body = Photo(date: NSDate(), desc: "inbody result!", data: convertURL("https://pub.chosun.com/editor/cheditor_new/attach/IE1KGC6OQPOPFN5JCWIB.jpg"))
         let exercise1 = Exercise(name: "lunge 10 times", did: true)
         let exercise2 = Exercise(name: "squart 50 times", did: false)
         let exerciseList = List<Exercise>([exercise1, exercise2])
         
-        let realm = try! Realm()
         try! realm.write {
             let root = realm.create(Root.self)
             root.bodyInformation = Body(height: 166.7, weight: 50.0)
@@ -58,6 +64,29 @@ class ModelManager {
         }
     }
     
+    static func addInbodyPhoto(photo:Photo) {
+        try! realm.write {
+            data.bodyHistoryPhotos?.addInbodyPhoto(photo)
+        }
+    }
+    
+    static func removeBodyPhoto(photo:Photo) {
+        try! realm.write {
+            data.bodyHistoryPhotos?.removeBodyPhoto(photo)
+        }
+    }
+    
+    static func removeInbodyPhoto(photo:Photo) {
+        try! realm.write {
+            data.bodyHistoryPhotos?.removeInbodyPhoto(photo)
+        }
+    }
+    
+    static func addBodyPhoto(photo:Photo) {
+        try! realm.write {
+            data.bodyHistoryPhotos?.addBodyPhoto(photo)
+        }
+    }
     static func writeBodyInformation(bodyInfo:Body) -> Bool {
         do {
             try realm.write {

@@ -1,7 +1,7 @@
+
 import UIKit
 
-class InbodyCollectionViewCell: UICollectionViewCell {
-    
+class PhotoCollectionViewCell: UICollectionViewCell {
     @IBOutlet var photo: UIImageView!
     @IBOutlet var desc: UILabel!
 }
