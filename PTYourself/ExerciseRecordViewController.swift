@@ -1,20 +1,28 @@
 import UIKit
 import RealmSwift
+import SwiftChart
 
 class ExerciseRecordViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     private let cellIdentifier = "exerciseRecordCell"
     private var bodyInformation = Body()
     private let records = List<Record>()
+    private let chartRect = CGRect(x: 0, y: 0, width: 250, height: 150)
+    private let chart = Chart()
     
+    @IBOutlet var graphView: UIView!
     @IBOutlet var recordTableView: UITableView!
     @IBOutlet var header: UINavigationItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         recordTableView.delegate = self
         recordTableView.dataSource = self
         recordTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
+        
+        chart.frame = chartRect
+        graphView.addSubview(chart)
         
         loadDynamicData()
     }
@@ -25,6 +33,19 @@ class ExerciseRecordViewController: UIViewController, UITableViewDelegate, UITab
         self.recordTableView.reloadData()
     }
     
+    private func drawGraph() {
+        let recordsDate:[String] = ModelManager.getRecordsDate()
+        
+        chart.removeSeries()
+        chart.xLabelsFormatter = {(labelIndex:Int , labelValue:Float) -> String in return recordsDate[labelIndex]}
+        chart.yLabelsFormatter = {String(Int($1)) + "%"}
+        chart.yLabelsOnRightSide = true
+        chart.minY = 0
+        chart.maxY = 100
+        chart.addSeries(ChartSeries(ModelManager.getMissionCompleteRates()))
+        chart.drawRect(chartRect)
+    }
+    
     private func loadDynamicData() {
         let data = ModelManager.getData()
         self.records.removeAll()
@@ -32,6 +53,7 @@ class ExerciseRecordViewController: UIViewController, UITableViewDelegate, UITab
         self.bodyInformation = data.bodyInformation!
         
         setNavigationHeader()
+        drawGraph()
         self.recordTableView.reloadData()
     }
     

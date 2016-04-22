@@ -63,6 +63,14 @@ class ModelManager {
         return data.exerciseList
     }
     
+    static func getMissionCompleteRates() -> Array<Float> {
+        return data.records.sort({$0.date < $1.date}).map({Float($0.missionCompleteRate)})
+    }
+    
+    static func getRecordsDate() -> [String] {
+        return data.records.sort({$0.date < $1.date}).map({($0.date as NSString).substringWithRange(NSRange(location: 8, length: 2))})
+    }
+    
     static func removeAll() -> Bool {
         do {
             try realm.write {

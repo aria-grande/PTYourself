@@ -2,6 +2,14 @@ import RealmSwift
 import Foundation
 
 class Util {
+    private static let todayDateTime = NSDate()
+    static var format = NSDateFormatter()
+    
+    static func getTodayDate() -> String {
+        format.dateFormat = "yyyy-MM-dd"
+        return format.stringFromDate(todayDateTime)
+    }
+    
     static func getCountOfDoneExercises(exerciseList:[String:Bool]) -> Int {
         return exerciseList.filter { $1 == true }.count
     }
