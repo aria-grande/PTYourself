@@ -1,8 +1,9 @@
 import UIKit
 
-class ExerciseTableViewCell: UITableViewCell {
+class ExerciseRecordCell: UITableViewCell {
 
-    @IBOutlet var title: UILabel!
+    @IBOutlet var date: UILabel!
+    @IBOutlet var missionCompleteRate: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

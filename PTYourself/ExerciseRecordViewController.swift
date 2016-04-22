@@ -22,12 +22,13 @@ class ExerciseRecordViewController: UIViewController, UITableViewDelegate, UITab
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         loadDynamicData()
+        self.recordTableView.reloadData()
     }
     
     private func loadDynamicData() {
         let data = ModelManager.getData()
         self.records.removeAll()
-        self.records.appendContentsOf(data.records)
+        self.records.appendContentsOf(data.records.sort({$0.date > $1.date}))
         self.bodyInformation = data.bodyInformation!
         
         setNavigationHeader()
@@ -47,9 +48,13 @@ class ExerciseRecordViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath)
         let record = Array(self.records)[indexPath.row]
-        cell.textLabel!.text = "\(record.date) -> \(record.missionCompleteRate)"
+        let cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: cellIdentifier)
+        cell.textLabel?.text = "\(record.date)"
+        cell.detailTextLabel?.text = "\(record.missionCompleteRate)%"
+        if indexPath.row == 0 {
+            tableView.selectRowAtIndexPath(indexPath, animated: false, scrollPosition: .Middle)
+        }
         
         return cell
     }

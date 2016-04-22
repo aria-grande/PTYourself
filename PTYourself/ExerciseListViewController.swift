@@ -21,7 +21,6 @@ class ExerciseListViewController: UITableViewController {
 
     // MARK: - Table view data source
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
@@ -30,10 +29,8 @@ class ExerciseListViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellID, forIndexPath: indexPath) as! ExerciseTableViewCell
-
-        cell.title.text = exerciseList[indexPath.row].name
-
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellID, forIndexPath: indexPath)
+        cell.textLabel?.text = exerciseList[indexPath.row].name
         return cell
     }
 
@@ -43,25 +40,19 @@ class ExerciseListViewController: UITableViewController {
         return true
     }
 
-    // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        // todo : remove
         if editingStyle == .Delete {
+            ModelManager.deleteExerciseFromTodayRecord(exerciseList[indexPath.row].name)
+            //todo update today record's missionCompleteRate;
+            ModelManager.updateTodayRecordMissionComplete()
             ModelManager.deleteExerciseFromList(indexPath.row)
+            
             print(data)
             // Delete the row from the data source
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
 
-//    override func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
-//        if (self.tableView.editing) {
-//            return UITableViewCellEditingStyle.Insert
-//        }
-//        return UITableViewCellEditingStyle.None
-//    }
     /*
     // Override to support rearranging the table view.
     override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {

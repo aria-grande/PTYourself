@@ -12,11 +12,19 @@ class ModelManager {
         return format.stringFromDate(todayDateTime)
     }
     
+    static func getYesterdayDate() -> String {
+        format.dateFormat = "yyyy-MM-dd";
+        return format.stringFromDate(todayDateTime.dateByAddingTimeInterval(-60*60*24))
+    }
+    
     static func convertURL(url:String) -> NSData {
         return NSData(contentsOfURL: NSURL(string: url)!)!
     }
     static func setSampleData() {
         let realm = try! Realm()
+//        try! realm.write {
+//            realm.deleteAll()
+//        }
         if realm.objects(Root.self).count > 0 {
             print(realm.objects(Root.self))
             return
@@ -35,6 +43,8 @@ class ModelManager {
             root.addExercise(exercise1)
             root.addExercise(exercise2)
             root.addRecord(Record(date: ModelManager.getTodayDate(), memo: "Test memo", missionCompleteRate: 50, exerciseList: exerciseList))
+            root.addRecord(Record(date: ModelManager.getYesterdayDate(), memo: "Test memo", missionCompleteRate: 50, exerciseList: exerciseList))
+            
         }
         
         print(realm.objects(Root.self))
@@ -98,6 +108,14 @@ class ModelManager {
         }
     }
     
+    static func updateTodayRecordMissionComplete() {
+        try! realm.write {
+            if let todayRecord:Record = data.records.filter("date=%@", getTodayDate()).first {
+                todayRecord.missionCompleteRate = Util.calculateMissionCompleteRate(todayRecord.exerciseList)
+            }
+        }
+    }
+    
     static func updateRecord(record:Record, memo:String, missionCompleteRate:Int, exerciseDict:[String:Bool]) -> Bool {
         do {
             try realm.write {
@@ -119,6 +137,15 @@ class ModelManager {
             return true
         } catch {
             return false
+        }
+    }
+    
+    static func deleteExerciseFromTodayRecord(name:String) {
+        try! realm.write {
+            let todayExerciseList = data.records.filter("date=%@", getTodayDate()).first?.exerciseList
+            if let exercise:Exercise = todayExerciseList?.filter("name=%@", name).first {
+                todayExerciseList?.removeAtIndex(todayExerciseList!.indexOf(exercise)!)
+            }
         }
     }
     

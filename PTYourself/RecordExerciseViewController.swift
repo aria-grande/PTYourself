@@ -23,8 +23,13 @@ class RecordExerciseViewController: UIViewController, UITableViewDelegate, UITab
         setData()
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        setData()
+    }
+    
     @IBAction func saveRecord(sender: AnyObject) {
-        let missionCompleteRate = Int(100*getCountOfDoneExercises(todayExerciseList)/todayExerciseList.count)
+        let missionCompleteRate = Util.calculateMissionCompleteRate(todayExerciseList)
         if recordIsNowCreated {
             ModelManager.addRecord(Record(date: ModelManager.getTodayDate(), memo: memo.text, missionCompleteRate: missionCompleteRate, exerciseList: Record.convert(self.todayExerciseList)))
         }
@@ -32,10 +37,6 @@ class RecordExerciseViewController: UIViewController, UITableViewDelegate, UITab
             ModelManager.updateRecord(todayRecord, memo: memo.text, missionCompleteRate: missionCompleteRate, exerciseDict: self.todayExerciseList)
         }
         [self.navigationController?.popViewControllerAnimated(true)]
-    }
-    
-    private func getCountOfDoneExercises(exerciseList:[String:Bool]) -> Int {
-        return exerciseList.filter { $1 == true }.count
     }
     
     private func setData() {
@@ -49,7 +50,6 @@ class RecordExerciseViewController: UIViewController, UITableViewDelegate, UITab
             recordIsNowCreated = true
             todayRecord = Record(date: ModelManager.getTodayDate(), memo: "", missionCompleteRate: 0)
         }
-        print(todayRecord)
         
         self.memo.text = self.todayRecord.memo
         // for adding newly added exercise
@@ -75,16 +75,28 @@ class RecordExerciseViewController: UIViewController, UITableViewDelegate, UITab
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath)
         let exerciseName:String = Array(self.todayExerciseList.keys)[indexPath.row]
         let exerciseDoneValue:Bool = Array(self.todayExerciseList.values)[indexPath.row]
-        cell.textLabel!.text = "\(exerciseName) -> \(exerciseDoneValue)"
+        setCell(cell, exerciseName: exerciseName, exerciseDoneValue: exerciseDoneValue)
         
         return cell
     }
 
+    private func setCell(cell:UITableViewCell, exerciseName:String, exerciseDoneValue:Bool) {
+        cell.textLabel!.text = "\(exerciseName)"
+        if exerciseDoneValue {
+            cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+        }
+        else {
+            cell.accessoryType = UITableViewCellAccessoryType.None
+        }
+    }
+    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let cell = tableView.cellForRowAtIndexPath(indexPath)!
         let exerciseName:String = Array(self.todayExerciseList.keys)[indexPath.row]
         let exerciseDoneValue:Bool = !Array(self.todayExerciseList.values)[indexPath.row]
+        
+        setCell(cell, exerciseName: exerciseName, exerciseDoneValue: exerciseDoneValue)
         self.todayExerciseList[exerciseName] = exerciseDoneValue
-        tableView.cellForRowAtIndexPath(indexPath)?.textLabel!.text = "\(exerciseName) -> \(exerciseDoneValue)"
     }
     
     /*
