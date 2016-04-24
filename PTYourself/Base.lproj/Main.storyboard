@@ -180,14 +180,16 @@
                                     <rect key="frame" x="0.0" y="0.0" width="292" height="271"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016.03.16" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgH-Hp-16o">
-                                            <rect key="frame" x="0.0" y="242" width="292" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016.03.16" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgH-Hp-16o">
+                                            <rect key="frame" x="0.0" y="226" width="292" height="45"/>
+                                            <gestureRecognizers/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="exercisingWoman.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="hBh-ar-ds8">
+                                        <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="exercisingWoman.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="hBh-ar-ds8">
                                             <rect key="frame" x="0.0" y="8" width="292" height="216"/>
+                                            <gestureRecognizers/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="216" id="mDA-N4-O3M"/>
                                             </constraints>
@@ -195,14 +197,15 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="dgH-Hp-16o" firstAttribute="leading" secondItem="hBh-ar-ds8" secondAttribute="leading" id="3aa-QZ-Yrb"/>
                                     <constraint firstItem="hBh-ar-ds8" firstAttribute="leading" secondItem="gAP-c6-NEh" secondAttribute="leadingMargin" constant="-8" id="6dS-xk-mro"/>
                                     <constraint firstItem="dgH-Hp-16o" firstAttribute="width" secondItem="gAP-c6-NEh" secondAttribute="width" id="Dd0-G4-J7u"/>
                                     <constraint firstItem="hBh-ar-ds8" firstAttribute="width" secondItem="gAP-c6-NEh" secondAttribute="width" id="IsS-nT-m74"/>
-                                    <constraint firstAttribute="bottomMargin" secondItem="dgH-Hp-16o" secondAttribute="bottom" id="UEc-Jx-9Gx"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="dgH-Hp-16o" secondAttribute="bottom" constant="-8" id="UEc-Jx-9Gx"/>
                                     <constraint firstItem="hBh-ar-ds8" firstAttribute="top" secondItem="gAP-c6-NEh" secondAttribute="topMargin" id="paq-Yn-aZv"/>
-                                    <constraint firstItem="dgH-Hp-16o" firstAttribute="top" secondItem="hBh-ar-ds8" secondAttribute="bottom" constant="18" id="slk-Ar-1dL"/>
+                                    <constraint firstItem="dgH-Hp-16o" firstAttribute="top" secondItem="hBh-ar-ds8" secondAttribute="bottom" constant="2" id="slk-Ar-1dL"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="desc" destination="dgH-Hp-16o" id="g2z-Ou-Asa"/>

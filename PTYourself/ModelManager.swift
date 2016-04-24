@@ -116,6 +116,22 @@ class ModelManager {
         }
     }
     
+    static func updatePhotoDescription(photoType:PhotoType, photo:Photo, newDesc:String) {
+        try! realm.write {
+            var photos = List<Photo>()
+            if photoType == PhotoType.Body {
+                photos = (self.data.bodyHistoryPhotos?.body)!
+            }
+            else if photoType == PhotoType.Inbody {
+                photos = (self.data.bodyHistoryPhotos?.inbody)!
+            }
+            
+            if let photo = photos.filter("data=%@",photo.data).filter("desc=%@",photo.desc).filter("date=%@",photo.date).first {
+                photo.desc = newDesc   
+            }
+        }
+    }
+    
     static func updateTodayRecordMissionComplete() {
         try! realm.write {
             if let todayRecord:Record = data.records.filter("date=%@", getTodayDate()).first {

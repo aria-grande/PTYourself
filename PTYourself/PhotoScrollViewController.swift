@@ -16,6 +16,7 @@ class PhotoScrollViewController: UIViewController, UIScrollViewDelegate {
         self.scrollView.delegate = self
         
         self.imageView.image = UIImage(data:photo.data)
+        self.navigationItem.title = photo.desc
     }
 
     @IBAction func removeThisPhoto(sender: UIBarButtonItem) {

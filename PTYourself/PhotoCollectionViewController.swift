@@ -3,15 +3,15 @@ import UIKit
 import Photos
 import RealmSwift
 
-private let reuseIdentifier = "photoCell"
-
 enum PhotoType {
     case Inbody
     case Body
     case None
 }
 
-class PhotoCollectionViewController: UICollectionViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class PhotoCollectionViewController: UICollectionViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIGestureRecognizerDelegate {
+    let reuseIdentifier = "photoCell"
+    let defaultTitle = ""
 
     let imagePicker = UIImagePickerController()
     private var photos:[Photo] = []
@@ -37,11 +37,54 @@ class PhotoCollectionViewController: UICollectionViewController, UIImagePickerCo
         setData()
         self.collectionView?.reloadData()
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setData()
         
+        let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(self.longPressToEditDescription(_:)))
+        longPressGesture.minimumPressDuration = 0.3
+        longPressGesture.delegate = self
+        self.collectionView?.addGestureRecognizer(longPressGesture)
+        
         imagePicker.delegate = self
+    }
+    
+    // MARK: - Image Editor
+    
+    func longPressToEditDescription(gestureRecognizer : UILongPressGestureRecognizer) {
+        if (gestureRecognizer.state != UIGestureRecognizerState.Ended){
+            return
+        }
+        
+        var photoToEdit = Photo()
+        var newTextField = UITextField()
+        
+        let p = gestureRecognizer.locationInView(self.collectionView)
+        if let indexPath:NSIndexPath = (self.collectionView?.indexPathForItemAtPoint(p)) {
+            photoToEdit = photos[indexPath.row]
+        }
+        
+        let alert = UIAlertController(title: "Edit Photo Description", message: nil, preferredStyle: .Alert)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        let okAction = UIAlertAction(title: "OK", style: .Default) { (alert: UIAlertAction!) -> Void in
+            self.editDescription(photoToEdit, newDesc:newTextField.text!)
+            self.setData()
+            self.collectionView?.reloadData()
+        }
+        
+        alert.addAction(okAction)
+        alert.addAction(cancelAction)
+        alert.addTextFieldWithConfigurationHandler {(textField: UITextField!) -> Void in
+            textField.text = photoToEdit.desc
+            newTextField = textField!
+        }
+        
+        presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func editDescription(photo:Photo, newDesc: String) {
+        ModelManager.updatePhotoDescription(self.photoType, photo: photo, newDesc: newDesc)
     }
     
     // MARK: - Image picker
@@ -60,7 +103,7 @@ class PhotoCollectionViewController: UICollectionViewController, UIImagePickerCo
         }
         
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            let photo = Photo(date:photoCreationDate, desc:"test desc", data: UIImageJPEGRepresentation(pickedImage, 0.7)!)
+            let photo = Photo(date:photoCreationDate, desc:defaultTitle, data: UIImageJPEGRepresentation(pickedImage, 0.7)!)
             if self.photoType == PhotoType.Body {
                 ModelManager.addBodyPhoto(photo)
             }
@@ -98,7 +141,8 @@ class PhotoCollectionViewController: UICollectionViewController, UIImagePickerCo
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! PhotoCollectionViewCell
     
         let photoDTO = photos[indexPath.row]
-        cell.desc.text = "\(photoDTO.date)\n\(photoDTO.desc)"
+        cell.desc.numberOfLines = 0
+        cell.desc.text = "\(Util.getYYYYMMDD(photoDTO.date))\n\(photoDTO.desc)"
         cell.photo.image = UIImage(data: photoDTO.data)
         
         return cell

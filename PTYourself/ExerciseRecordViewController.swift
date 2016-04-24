@@ -23,7 +23,7 @@ class ExerciseRecordViewController: UIViewController, UITableViewDelegate, UITab
         recordTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
         
         let graphViewFrame = self.graphView.frame
-        chartRect = CGRect(x: 0, y: 0, width: graphViewFrame.width*0.65, height: graphViewFrame.height*0.9)
+        chartRect = CGRect(x: 0, y: 0, width: graphViewFrame.width*0.6, height: graphViewFrame.height*0.9)
         chart.frame = chartRect
         graphView.addSubview(chart)
         
