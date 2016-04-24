@@ -315,12 +315,12 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
-                                                            <color key="backgroundColor" red="0.89242473821989532" green="0.89242473821989532" blue="0.89242473821989532" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="backgroundColor" red="0.94164219798657722" green="0.84270134228187921" blue="0.62880138422818788" alpha="1" colorSpace="calibratedRGB"/>
                                                         </tableViewCellContentView>
                                                         <connections>
                                                             <outlet property="date" destination="gtR-Jn-Nve" id="3VU-xz-sgL"/>
                                                             <outlet property="missionCompleteRate" destination="DQS-dv-BNF" id="Hdx-wB-K6A"/>
-                                                            <segue destination="05g-Xw-iXP" kind="showDetail" id="mcN-B2-vuQ"/>
+                                                            <segue destination="05g-Xw-iXP" kind="show" identifier="showExerciseHistory" id="GvM-z6-Sdc"/>
                                                         </connections>
                                                     </tableViewCell>
                                                 </prototypes>
@@ -348,7 +348,7 @@
                             <constraint firstAttribute="trailing" secondItem="yv3-go-Tjw" secondAttribute="trailing" id="y1O-RG-yfk"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Exercise Record" image="record-bar" id="pGV-Ht-waJ"/>
+                    <tabBarItem key="tabBarItem" title="Exercise Record" image="exerciseRecord-bar" selectedImage="exerciseRecord-bar" id="pGV-Ht-waJ"/>
                     <navigationItem key="navigationItem" title="166cm, 50kg" id="ST5-M2-0y8">
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="Jbo-7n-ziq">
                             <connections>
@@ -369,7 +369,7 @@
         <!--ExerciseHistoryViewer-->
         <scene sceneID="OOH-qw-h5C">
             <objects>
-                <viewController storyboardIdentifier="ExerciseHistoryViewer" title="ExerciseHistoryViewer" id="05g-Xw-iXP" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ExerciseHistoryViewer" title="ExerciseHistoryViewer" id="05g-Xw-iXP" customClass="ExerciseHistoryDetailViewController" customModule="PTYourself" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pIa-xS-q7K"/>
                         <viewControllerLayoutGuide type="bottom" id="Pxh-tY-acG"/>
@@ -377,8 +377,76 @@
                     <view key="view" contentMode="scaleToFill" restorationIdentifier="ExerciseHistoryView" id="wm1-gC-Sf8">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Your Review" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7vZ-HG-vQC">
+                                <rect key="frame" x="20" y="79" width="104" height="23"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="249" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Wfd-9w-Nrf" userLabel="recordYourFeeling">
+                                <rect key="frame" x="20" y="110" width="560" height="85"/>
+                                <color key="backgroundColor" red="0.94402405099999998" green="0.94402405099999998" blue="0.94402405099999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="85" id="WMU-DO-kOC"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" red="0.2568259577" green="0.26754744759999999" blue="0.25693743959999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="4" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="Pxo-UN-wM1">
+                                <rect key="frame" x="0.0" y="266" width="600" height="285"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="exercise4History" textLabel="aVA-gp-qjx" style="IBUITableViewCellStyleDefault" id="Pjv-hf-mHB">
+                                        <rect key="frame" x="0.0" y="49.5" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Pjv-hf-mHB" id="qWe-ye-Dxg">
+                                            <rect key="frame" x="0.0" y="0.0" width="561" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" id="aVA-gp-qjx">
+                                                    <rect key="frame" x="15" y="0.0" width="546" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exercise Record" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GjU-gX-ZOc">
+                                <rect key="frame" x="20" y="235" width="137" height="23"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Wfd-9w-Nrf" firstAttribute="top" secondItem="7vZ-HG-vQC" secondAttribute="bottom" constant="8" id="7qB-L3-LZn"/>
+                            <constraint firstItem="GjU-gX-ZOc" firstAttribute="leading" secondItem="wm1-gC-Sf8" secondAttribute="leadingMargin" id="DqC-9H-YtI"/>
+                            <constraint firstItem="Wfd-9w-Nrf" firstAttribute="leading" secondItem="wm1-gC-Sf8" secondAttribute="leadingMargin" id="Ewv-B3-tS3"/>
+                            <constraint firstItem="Pxo-UN-wM1" firstAttribute="bottom" secondItem="Pxh-tY-acG" secondAttribute="top" id="P7f-3i-S1X"/>
+                            <constraint firstItem="Pxo-UN-wM1" firstAttribute="width" secondItem="wm1-gC-Sf8" secondAttribute="width" id="Xhn-Tb-fvd"/>
+                            <constraint firstItem="7vZ-HG-vQC" firstAttribute="top" secondItem="pIa-xS-q7K" secondAttribute="bottom" constant="15" id="ezC-hx-Jbc" userLabel="Your Review.top = Top Layout Guide.bottom + 10"/>
+                            <constraint firstItem="Pxo-UN-wM1" firstAttribute="leading" secondItem="wm1-gC-Sf8" secondAttribute="leading" id="gqA-te-7AP"/>
+                            <constraint firstItem="GjU-gX-ZOc" firstAttribute="top" secondItem="Wfd-9w-Nrf" secondAttribute="bottom" constant="40" id="hrU-Yv-w0B"/>
+                            <constraint firstItem="7vZ-HG-vQC" firstAttribute="leading" secondItem="wm1-gC-Sf8" secondAttribute="leadingMargin" id="mqp-Ld-qcW"/>
+                            <constraint firstItem="Pxo-UN-wM1" firstAttribute="top" secondItem="GjU-gX-ZOc" secondAttribute="bottom" constant="8" id="xHo-C8-7sM"/>
+                            <constraint firstItem="Wfd-9w-Nrf" firstAttribute="centerX" secondItem="Pxo-UN-wM1" secondAttribute="centerX" id="yyN-rQ-Jip"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Record on 2016.04.24" id="TjO-QZ-3Hc">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="ZCh-SL-Qiy"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="exerciseRecord" destination="Pxo-UN-wM1" id="Mu4-BT-ROi"/>
+                        <outlet property="review" destination="Wfd-9w-Nrf" id="jJB-Hj-a91"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9fa-lv-Iyy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -445,9 +513,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="OzS-Au-iPy" firstAttribute="top" secondItem="xUs-C1-Xdx" secondAttribute="bottom" constant="14" id="0bX-Py-P9r"/>
+                            <constraint firstItem="OzS-Au-iPy" firstAttribute="top" secondItem="xUs-C1-Xdx" secondAttribute="bottom" constant="14" id="0bX-Py-P9r" userLabel="How do you feel today?.top = Top Layout Guide.bottom + 22"/>
                             <constraint firstItem="1TS-6I-wjL" firstAttribute="leading" secondItem="OH1-pG-yRR" secondAttribute="leadingMargin" id="187-rA-Alv"/>
                             <constraint firstAttribute="leadingMargin" secondItem="3ep-YS-HRe" secondAttribute="leading" id="KMH-I1-PHZ"/>
+                            <constraint firstItem="xcx-0t-FLv" firstAttribute="centerX" secondItem="1TS-6I-wjL" secondAttribute="centerX" id="Osc-QS-hfg"/>
                             <constraint firstItem="xcx-0t-FLv" firstAttribute="top" secondItem="xUs-C1-Xdx" secondAttribute="bottom" constant="198" id="f5n-Nu-jDI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="1TS-6I-wjL" secondAttribute="trailing" id="fhE-vZ-E2U"/>
                             <constraint firstItem="xcx-0t-FLv" firstAttribute="top" secondItem="3ep-YS-HRe" secondAttribute="bottom" constant="8" id="h2I-wi-RNQ"/>
@@ -455,7 +524,6 @@
                             <constraint firstItem="xcx-0t-FLv" firstAttribute="width" secondItem="OH1-pG-yRR" secondAttribute="width" id="jkE-Wy-5jR"/>
                             <constraint firstItem="1TS-6I-wjL" firstAttribute="leading" secondItem="OzS-Au-iPy" secondAttribute="leading" id="kAg-Ra-321"/>
                             <constraint firstItem="1TS-6I-wjL" firstAttribute="top" secondItem="OzS-Au-iPy" secondAttribute="bottom" constant="4" id="krB-KC-mbe"/>
-                            <constraint firstItem="xcx-0t-FLv" firstAttribute="leading" secondItem="OH1-pG-yRR" secondAttribute="leadingMargin" constant="-20" id="nSN-FY-QcF" userLabel="exerciseList.leading = leadingMargin"/>
                             <constraint firstItem="1TS-6I-wjL" firstAttribute="top" secondItem="xUs-C1-Xdx" secondAttribute="bottom" constant="39" id="wtz-ZZ-cW7"/>
                         </constraints>
                     </view>
@@ -714,7 +782,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="exercise" textLabel="27S-xe-rHu" style="IBUITableViewCellStyleDefault" id="bbm-S3-cNv">
-                                <rect key="frame" x="0.0" y="92" width="600" height="50"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bbm-S3-cNv" id="X6O-JT-94D">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="49.5"/>
@@ -809,10 +877,9 @@
         <image name="bodySizeMeasure.jpg" width="680" height="510"/>
         <image name="exerciseRecord-bar" width="29" height="29"/>
         <image name="exercisingWoman.jpg" width="612" height="612"/>
-        <image name="record-bar" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="2tO-if-ZHP"/>
         <segue reference="pjn-jR-a3c"/>
+        <segue reference="qxD-i9-Fic"/>
     </inferredMetricsTieBreakers>
 </document>

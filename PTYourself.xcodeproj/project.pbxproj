@@ -13,6 +13,7 @@
 		DE3F3F901CBFEA4D001D937F /* PhotoScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3F3F8F1CBFEA4D001D937F /* PhotoScrollViewController.swift */; };
 		DE3F3F921CC38079001D937F /* BodyHistoryTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3F3F911CC38079001D937F /* BodyHistoryTableTableViewController.swift */; };
 		DE3F3F961CCA13B5001D937F /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3F3F951CCA13B5001D937F /* Util.swift */; };
+		DE46A1591CCCAC2B00A7ACC1 /* ExerciseHistoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46A1581CCCAC2B00A7ACC1 /* ExerciseHistoryDetailViewController.swift */; };
 		DE8D1A251CB490ED009F9C75 /* ExerciseRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D1A241CB490ED009F9C75 /* ExerciseRecordViewController.swift */; };
 		DE8D1A271CB5EC16009F9C75 /* ModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D1A261CB5EC16009F9C75 /* ModelManager.swift */; };
 		DE8D1A2B1CB65C54009F9C75 /* AddNewExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D1A2A1CB65C54009F9C75 /* AddNewExerciseViewController.swift */; };
@@ -79,6 +80,7 @@
 		DE3F3F8F1CBFEA4D001D937F /* PhotoScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoScrollViewController.swift; sourceTree = "<group>"; };
 		DE3F3F911CC38079001D937F /* BodyHistoryTableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyHistoryTableTableViewController.swift; sourceTree = "<group>"; };
 		DE3F3F951CCA13B5001D937F /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		DE46A1581CCCAC2B00A7ACC1 /* ExerciseHistoryDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseHistoryDetailViewController.swift; sourceTree = "<group>"; };
 		DE8D1A241CB490ED009F9C75 /* ExerciseRecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseRecordViewController.swift; sourceTree = "<group>"; };
 		DE8D1A261CB5EC16009F9C75 /* ModelManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelManager.swift; sourceTree = "<group>"; };
 		DE8D1A2A1CB65C54009F9C75 /* AddNewExerciseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewExerciseViewController.swift; sourceTree = "<group>"; };
@@ -238,14 +240,15 @@
 			isa = PBXGroup;
 			children = (
 				DECFBD8E1C9C4800006B1AE6 /* ViewController.swift */,
-				DECFBDEC1CA0026D006B1AE6 /* BodyInformationViewController.swift */,
 				DECFBDF11CA0F305006B1AE6 /* ExerciseListViewController.swift */,
 				DE8D1A241CB490ED009F9C75 /* ExerciseRecordViewController.swift */,
-				DE8D1A2A1CB65C54009F9C75 /* AddNewExerciseViewController.swift */,
-				DE8D1A2C1CB65E5E009F9C75 /* PhotoCollectionViewController.swift */,
 				DE8D1A371CB74A89009F9C75 /* RecordExerciseViewController.swift */,
-				DE3F3F8F1CBFEA4D001D937F /* PhotoScrollViewController.swift */,
+				DE46A1581CCCAC2B00A7ACC1 /* ExerciseHistoryDetailViewController.swift */,
 				DE3F3F911CC38079001D937F /* BodyHistoryTableTableViewController.swift */,
+				DE8D1A2C1CB65E5E009F9C75 /* PhotoCollectionViewController.swift */,
+				DE3F3F8F1CBFEA4D001D937F /* PhotoScrollViewController.swift */,
+				DECFBDEC1CA0026D006B1AE6 /* BodyInformationViewController.swift */,
+				DE8D1A2A1CB65C54009F9C75 /* AddNewExerciseViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -515,6 +518,7 @@
 			files = (
 				DECFBDE71C9EF356006B1AE6 /* Photo.swift in Sources */,
 				DECFBDEB1C9EF39B006B1AE6 /* Root.swift in Sources */,
+				DE46A1591CCCAC2B00A7ACC1 /* ExerciseHistoryDetailViewController.swift in Sources */,
 				DECFBDF41CA0F70D006B1AE6 /* ExerciseRecordCell.swift in Sources */,
 				DE3F3F921CC38079001D937F /* BodyHistoryTableTableViewController.swift in Sources */,
 				DE8D1A251CB490ED009F9C75 /* ExerciseRecordViewController.swift in Sources */,

@@ -4,6 +4,7 @@ import SwiftChart
 
 class ExerciseRecordViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    private let showHistorySegueID = "showExerciseHistory"
     private let cellIdentifier = "exerciseRecordCell"
     private var bodyInformation = Body()
     private let records = List<Record>()
@@ -37,6 +38,9 @@ class ExerciseRecordViewController: UIViewController, UITableViewDelegate, UITab
     
     private func drawGraph() {
         let recordsDate:[String] = ModelManager.getRecordsDate()
+        let series = ChartSeries(ModelManager.getMissionCompleteRates())
+        series.area = true
+        series.color = ChartColors.orangeColor()
         
         chart.removeSeries()
         chart.xLabelsFormatter = {(labelIndex:Int , labelValue:Float) -> String in return recordsDate[labelIndex]}
@@ -44,9 +48,6 @@ class ExerciseRecordViewController: UIViewController, UITableViewDelegate, UITab
         chart.yLabelsOnRightSide = true
         chart.minY = 0
         chart.maxY = 100
-        let series = ChartSeries(ModelManager.getMissionCompleteRates())
-        series.area = true
-        series.color = ChartColors.orangeColor()
         chart.addSeries(series)
         chart.setNeedsDisplay()
     }
@@ -80,20 +81,25 @@ class ExerciseRecordViewController: UIViewController, UITableViewDelegate, UITab
         cell.textLabel?.text = "\(record.date)"
         cell.detailTextLabel?.text = "\(record.missionCompleteRate)%"
         if indexPath.row == 0 {
-            tableView.selectRowAtIndexPath(indexPath, animated: false, scrollPosition: .Middle)
+            cell.backgroundColor = UIColor(red: CGFloat(0.941), green: CGFloat(0.843), blue: CGFloat(0.627), alpha: CGFloat(1))
         }
         
         return cell
     }
 
-    /*
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.performSegueWithIdentifier(showHistorySegueID, sender: indexPath)
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == showHistorySegueID {
+            let detailVC = segue.destinationViewController as! ExerciseHistoryDetailViewController
+            detailVC.setRecord(self.records[(sender as! NSIndexPath).row])
+            
+        }
     }
-    */
 
 }
