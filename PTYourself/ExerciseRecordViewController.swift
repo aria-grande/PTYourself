@@ -48,7 +48,7 @@ class ExerciseRecordViewController: UIViewController, UITableViewDelegate, UITab
         series.area = true
         series.color = ChartColors.orangeColor()
         chart.addSeries(series)
-        chart.drawRect(chartRect)
+        chart.setNeedsDisplay()
     }
     
     private func loadDynamicData() {
