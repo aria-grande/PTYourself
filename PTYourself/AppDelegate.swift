@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  PTYourself
-//
-//  Created by Aree Oh on 2016. 3. 18..
-//  Copyright © 2016년 Aree Oh. All rights reserved.
-//
-
 import UIKit
 
 @UIApplicationMain

@@ -20,6 +20,7 @@
 		DE8D1A2D1CB65E5E009F9C75 /* PhotoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D1A2C1CB65E5E009F9C75 /* PhotoCollectionViewController.swift */; };
 		DE8D1A321CB743F6009F9C75 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D1A311CB743F6009F9C75 /* PhotoCollectionViewCell.swift */; };
 		DE8D1A381CB74A89009F9C75 /* RecordExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D1A371CB74A89009F9C75 /* RecordExerciseViewController.swift */; };
+		DE8F31F31CCCE1DF0016005D /* PhotoType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8F31F21CCCE1DF0016005D /* PhotoType.swift */; };
 		DECFBD8D1C9C4800006B1AE6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECFBD8C1C9C4800006B1AE6 /* AppDelegate.swift */; };
 		DECFBD8F1C9C4800006B1AE6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECFBD8E1C9C4800006B1AE6 /* ViewController.swift */; };
 		DECFBD921C9C4800006B1AE6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DECFBD901C9C4800006B1AE6 /* Main.storyboard */; };
@@ -36,7 +37,6 @@
 		DECFBDEB1C9EF39B006B1AE6 /* Root.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECFBDEA1C9EF39B006B1AE6 /* Root.swift */; };
 		DECFBDED1CA0026D006B1AE6 /* BodyInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECFBDEC1CA0026D006B1AE6 /* BodyInformationViewController.swift */; };
 		DECFBDF21CA0F305006B1AE6 /* ExerciseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECFBDF11CA0F305006B1AE6 /* ExerciseListViewController.swift */; };
-		DECFBDF41CA0F70D006B1AE6 /* ExerciseRecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECFBDF31CA0F70D006B1AE6 /* ExerciseRecordCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +87,7 @@
 		DE8D1A2C1CB65E5E009F9C75 /* PhotoCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewController.swift; sourceTree = "<group>"; };
 		DE8D1A311CB743F6009F9C75 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		DE8D1A371CB74A89009F9C75 /* RecordExerciseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordExerciseViewController.swift; sourceTree = "<group>"; };
+		DE8F31F21CCCE1DF0016005D /* PhotoType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoType.swift; sourceTree = "<group>"; };
 		DECFBD891C9C4800006B1AE6 /* PTYourself.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PTYourself.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DECFBD8C1C9C4800006B1AE6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DECFBD8E1C9C4800006B1AE6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -108,7 +109,6 @@
 		DECFBDEA1C9EF39B006B1AE6 /* Root.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Root.swift; sourceTree = "<group>"; };
 		DECFBDEC1CA0026D006B1AE6 /* BodyInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyInformationViewController.swift; sourceTree = "<group>"; };
 		DECFBDF11CA0F305006B1AE6 /* ExerciseListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseListViewController.swift; sourceTree = "<group>"; };
-		DECFBDF31CA0F70D006B1AE6 /* ExerciseRecordCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseRecordCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,10 +150,17 @@
 		DE8D1A301CB7363E009F9C75 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				DECFBDF31CA0F70D006B1AE6 /* ExerciseRecordCell.swift */,
 				DE8D1A311CB743F6009F9C75 /* PhotoCollectionViewCell.swift */,
 			);
 			name = Cell;
+			sourceTree = "<group>";
+		};
+		DE8F31F41CCCE1E90016005D /* Type */ = {
+			isa = PBXGroup;
+			children = (
+				DE8F31F21CCCE1DF0016005D /* PhotoType.swift */,
+			);
+			name = Type;
 			sourceTree = "<group>";
 		};
 		DECFBD801C9C4800006B1AE6 = {
@@ -180,6 +187,7 @@
 		DECFBD8B1C9C4800006B1AE6 /* PTYourself */ = {
 			isa = PBXGroup;
 			children = (
+				DE8F31F41CCCE1E90016005D /* Type */,
 				DE8D1A301CB7363E009F9C75 /* Cell */,
 				DECFBDEE1CA02C21006B1AE6 /* Controller */,
 				DECFBD8C1C9C4800006B1AE6 /* AppDelegate.swift */,
@@ -519,7 +527,6 @@
 				DECFBDE71C9EF356006B1AE6 /* Photo.swift in Sources */,
 				DECFBDEB1C9EF39B006B1AE6 /* Root.swift in Sources */,
 				DE46A1591CCCAC2B00A7ACC1 /* ExerciseHistoryDetailViewController.swift in Sources */,
-				DECFBDF41CA0F70D006B1AE6 /* ExerciseRecordCell.swift in Sources */,
 				DE3F3F921CC38079001D937F /* BodyHistoryTableTableViewController.swift in Sources */,
 				DE8D1A251CB490ED009F9C75 /* ExerciseRecordViewController.swift in Sources */,
 				DE3F3F901CBFEA4D001D937F /* PhotoScrollViewController.swift in Sources */,
@@ -528,6 +535,7 @@
 				DECFBD8F1C9C4800006B1AE6 /* ViewController.swift in Sources */,
 				DECFBD8D1C9C4800006B1AE6 /* AppDelegate.swift in Sources */,
 				DECFBDDB1C9EE1D8006B1AE6 /* Exercise.swift in Sources */,
+				DE8F31F31CCCE1DF0016005D /* PhotoType.swift in Sources */,
 				DE8D1A2B1CB65C54009F9C75 /* AddNewExerciseViewController.swift in Sources */,
 				DECFBDF21CA0F305006B1AE6 /* ExerciseListViewController.swift in Sources */,
 				DE8D1A321CB743F6009F9C75 /* PhotoCollectionViewCell.swift in Sources */,

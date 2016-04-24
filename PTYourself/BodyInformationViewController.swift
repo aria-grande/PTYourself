@@ -3,6 +3,8 @@ import RealmSwift
 
 class BodyInformationViewController: UIViewController {
 
+    private let errorMessage = "fill the information correctly"
+    
     private var data:Root = Root();
     private let realm = try! Realm()
     
@@ -18,7 +20,7 @@ class BodyInformationViewController: UIViewController {
             [self.navigationController?.popViewControllerAnimated(true)]
         }
         else {
-            alertMessage.text = "fill the information correctly"
+            alertMessage.text = errorMessage
         }
     }
     
@@ -31,9 +33,5 @@ class BodyInformationViewController: UIViewController {
         let body = data.bodyInformation
         height.text = String(body!.height)
         weight.text = String(body!.weight)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
 }

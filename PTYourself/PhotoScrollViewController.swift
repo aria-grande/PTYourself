@@ -2,12 +2,12 @@
 import UIKit
 
 class PhotoScrollViewController: UIViewController, UIScrollViewDelegate {
-
-    @IBOutlet var scrollView: UIScrollView!
-    @IBOutlet var imageView: UIImageView!
     
     var photo:Photo!
     var photoType:PhotoType = PhotoType.None
+    
+    @IBOutlet var scrollView: UIScrollView!
+    @IBOutlet var imageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,15 +37,4 @@ class PhotoScrollViewController: UIViewController, UIScrollViewDelegate {
     func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
         return imageView
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

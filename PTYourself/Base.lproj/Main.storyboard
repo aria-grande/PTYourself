@@ -296,7 +296,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="600" height="257"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="exerciseRecordCell" textLabel="gtR-Jn-Nve" detailTextLabel="DQS-dv-BNF" style="IBUITableViewCellStyleValue1" id="JHW-EX-bl3" userLabel="exerciseRecordCell" customClass="ExerciseRecordCell" customModule="PTYourself" customModuleProvider="target">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="exerciseRecordCell" textLabel="gtR-Jn-Nve" detailTextLabel="DQS-dv-BNF" style="IBUITableViewCellStyleValue1" id="JHW-EX-bl3" userLabel="exerciseRecordCell">
                                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JHW-EX-bl3" id="CG3-sZ-Mq0">

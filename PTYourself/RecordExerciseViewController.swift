@@ -3,13 +3,14 @@ import UIKit
 import RealmSwift
 
 class RecordExerciseViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    @IBOutlet var memo: UITextView!
-    @IBOutlet var exerciseListView: UITableView!
-    
     private let cellIdentifier = "exercise4Record"
+    
     private var todayRecord = Record()
     private var todayExerciseList = [String:Bool]()
     private var recordIsNowCreated = false
+    
+    @IBOutlet var memo: UITextView!
+    @IBOutlet var exerciseListView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +32,7 @@ class RecordExerciseViewController: UIViewController, UITableViewDelegate, UITab
     @IBAction func saveRecord(sender: AnyObject) {
         let missionCompleteRate = Util.calculateMissionCompleteRate(todayExerciseList)
         if recordIsNowCreated {
-            ModelManager.addRecord(Record(date: ModelManager.getTodayDate(), memo: memo.text, missionCompleteRate: missionCompleteRate, exerciseList: Record.convert(self.todayExerciseList)))
+            ModelManager.addRecord(Record(date: Util.getTodayDate(), memo: memo.text, missionCompleteRate: missionCompleteRate, exerciseList: Record.convert(self.todayExerciseList)))
         }
         else {
             ModelManager.updateRecord(todayRecord, memo: memo.text, missionCompleteRate: missionCompleteRate, exerciseDict: self.todayExerciseList)
@@ -42,13 +43,13 @@ class RecordExerciseViewController: UIViewController, UITableViewDelegate, UITab
     private func setData() {
         let data = ModelManager.getData()
         let recordRealmObject =
-            data.records.filter("date=%@", ModelManager.getTodayDate())
+            data.records.filter("date=%@", Util.getTodayDate())
         if  recordRealmObject.count > 0 {
             todayRecord = recordRealmObject.first!
         }
         else {
             recordIsNowCreated = true
-            todayRecord = Record(date: ModelManager.getTodayDate(), memo: "", missionCompleteRate: 0)
+            todayRecord = Record(date: Util.getTodayDate(), memo: "", missionCompleteRate: 0)
         }
         
         self.memo.text = self.todayRecord.memo
@@ -98,15 +99,4 @@ class RecordExerciseViewController: UIViewController, UITableViewDelegate, UITab
         setCell(cell, exerciseName: exerciseName, exerciseDoneValue: exerciseDoneValue)
         self.todayExerciseList[exerciseName] = exerciseDoneValue
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

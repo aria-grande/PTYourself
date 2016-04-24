@@ -6,10 +6,11 @@ class ExerciseRecordViewController: UIViewController, UITableViewDelegate, UITab
     
     private let showHistorySegueID = "showExerciseHistory"
     private let cellIdentifier = "exerciseRecordCell"
-    private var bodyInformation = Body()
+    
     private let records = List<Record>()
-    private var chartRect = CGRect(x: 0, y: 0, width: 350, height: 170)
     private let chart = Chart()
+    private var chartRect = CGRect(x: 0, y: 0, width: 350, height: 170)
+    private var bodyInformation = Body()
     
     @IBOutlet var graphView: UIView!
     @IBOutlet var recordTableView: UITableView!
@@ -93,8 +94,6 @@ class ExerciseRecordViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
         if segue.identifier == showHistorySegueID {
             let detailVC = segue.destinationViewController as! ExerciseHistoryDetailViewController
             detailVC.setRecord(self.records[(sender as! NSIndexPath).row])

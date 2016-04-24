@@ -3,20 +3,16 @@ import UIKit
 import Photos
 import RealmSwift
 
-enum PhotoType {
-    case Inbody
-    case Body
-    case None
-}
-
 class PhotoCollectionViewController: UICollectionViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIGestureRecognizerDelegate {
-    let reuseIdentifier = "photoCell"
-    let defaultTitle = ""
-
-    let imagePicker = UIImagePickerController()
+    private let showDetailSegueID = "showDetail"
+    private let reuseIdentifier = "photoCell"
+    private let editPhotoDescTitle = "Edit Photo Description"
+    private let defaultPhotoTitle = ""
+    
+    private let imagePicker = UIImagePickerController()
     private var photos:[Photo] = []
     private var photoType:PhotoType = PhotoType.None
-    var selectedPhoto = Photo()
+    private var selectedPhoto = Photo()
     
     func setPhotoType(photoType:PhotoType) {
         self.photoType = photoType
@@ -65,7 +61,7 @@ class PhotoCollectionViewController: UICollectionViewController, UIImagePickerCo
             photoToEdit = photos[indexPath.row]
         }
         
-        let alert = UIAlertController(title: "Edit Photo Description", message: nil, preferredStyle: .Alert)
+        let alert = UIAlertController(title: editPhotoDescTitle, message: nil, preferredStyle: .Alert)
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
         let okAction = UIAlertAction(title: "OK", style: .Default) { (alert: UIAlertAction!) -> Void in
             self.editDescription(photoToEdit, newDesc:newTextField.text!)
@@ -103,7 +99,7 @@ class PhotoCollectionViewController: UICollectionViewController, UIImagePickerCo
         }
         
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            let photo = Photo(date:photoCreationDate, desc:defaultTitle, data: UIImageJPEGRepresentation(pickedImage, 0.7)!)
+            let photo = Photo(date:photoCreationDate, desc:defaultPhotoTitle, data: UIImageJPEGRepresentation(pickedImage, 0.7)!)
             if self.photoType == PhotoType.Body {
                 ModelManager.addBodyPhoto(photo)
             }
@@ -118,9 +114,8 @@ class PhotoCollectionViewController: UICollectionViewController, UIImagePickerCo
 
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "showDetail" {
+        if segue.identifier == showDetailSegueID {
             let scrollVC = segue.destinationViewController as! PhotoScrollViewController
             scrollVC.setUIImageView(self.selectedPhoto, type: self.photoType)
         }
@@ -131,7 +126,6 @@ class PhotoCollectionViewController: UICollectionViewController, UIImagePickerCo
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
     }
-    
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return photos.endIndex
@@ -150,27 +144,9 @@ class PhotoCollectionViewController: UICollectionViewController, UIImagePickerCo
 
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         self.selectedPhoto = photos[indexPath.row]
-        self.performSegueWithIdentifier("showDetail", sender: self)
+        self.performSegueWithIdentifier(showDetailSegueID, sender: self)
     }
     
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(collectionView: UICollectionView, shouldHighlightItemAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(collectionView: UICollectionView, shouldSelectItemAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return true
-    }
-    */
-
-
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
     override func collectionView(collectionView: UICollectionView, shouldShowMenuForItemAtIndexPath indexPath: NSIndexPath) -> Bool {
         return false
     }
@@ -178,10 +154,4 @@ class PhotoCollectionViewController: UICollectionViewController, UIImagePickerCo
     override func collectionView(collectionView: UICollectionView, canPerformAction action: Selector, forItemAtIndexPath indexPath: NSIndexPath, withSender sender: AnyObject?) -> Bool {
         return false
     }
-
-    override func collectionView(collectionView: UICollectionView, performAction action: Selector, forItemAtIndexPath indexPath: NSIndexPath, withSender sender: AnyObject?) {
-    
-    }
-
-
 }
