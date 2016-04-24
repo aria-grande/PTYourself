@@ -7,7 +7,7 @@ class ExerciseRecordViewController: UIViewController, UITableViewDelegate, UITab
     private let cellIdentifier = "exerciseRecordCell"
     private var bodyInformation = Body()
     private let records = List<Record>()
-    private let chartRect = CGRect(x: 0, y: 0, width: 250, height: 150)
+    private var chartRect = CGRect(x: 0, y: 0, width: 350, height: 170)
     private let chart = Chart()
     
     @IBOutlet var graphView: UIView!
@@ -21,6 +21,8 @@ class ExerciseRecordViewController: UIViewController, UITableViewDelegate, UITab
         recordTableView.dataSource = self
         recordTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
         
+        let graphViewFrame = self.graphView.frame
+        chartRect = CGRect(x: 0, y: 0, width: graphViewFrame.width*0.65, height: graphViewFrame.height*0.9)
         chart.frame = chartRect
         graphView.addSubview(chart)
         
@@ -42,7 +44,10 @@ class ExerciseRecordViewController: UIViewController, UITableViewDelegate, UITab
         chart.yLabelsOnRightSide = true
         chart.minY = 0
         chart.maxY = 100
-        chart.addSeries(ChartSeries(ModelManager.getMissionCompleteRates()))
+        let series = ChartSeries(ModelManager.getMissionCompleteRates())
+        series.area = true
+        series.color = ChartColors.orangeColor()
+        chart.addSeries(series)
         chart.drawRect(chartRect)
     }
     
