@@ -1,5 +1,6 @@
 
 import UIKit
+import Photos
 import RealmSwift
 
 private let reuseIdentifier = "photoCell"
@@ -41,13 +42,11 @@ class PhotoCollectionViewController: UICollectionViewController, UIImagePickerCo
         setData()
         
         imagePicker.delegate = self
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
     }
     
     // MARK: - Image picker
     @IBAction func loadImageButtonTapped(sender: UIBarButtonItem) {
-        // todo : add taing a picture and use it
+        // todo : add taking a picture and use it
         imagePicker.allowsEditing = false
         imagePicker.sourceType = .PhotoLibrary
         
@@ -55,9 +54,13 @@ class PhotoCollectionViewController: UICollectionViewController, UIImagePickerCo
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        var photoCreationDate = NSDate()
+        if let ph = PHAsset.fetchAssetsWithALAssetURLs([(info["UIImagePickerControllerReferenceURL"] as! NSURL)], options: nil).firstObject {
+            photoCreationDate = (ph as! PHAsset).creationDate!
+        }
+        
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            // todo edit
-            let photo = Photo(date:NSDate(), desc:"test desc", data: UIImageJPEGRepresentation(pickedImage, 0.7)!)
+            let photo = Photo(date:photoCreationDate, desc:"test desc", data: UIImageJPEGRepresentation(pickedImage, 0.7)!)
             if self.photoType == PhotoType.Body {
                 ModelManager.addBodyPhoto(photo)
             }
@@ -95,7 +98,7 @@ class PhotoCollectionViewController: UICollectionViewController, UIImagePickerCo
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! PhotoCollectionViewCell
     
         let photoDTO = photos[indexPath.row]
-        cell.desc.text = "\(photoDTO.date), \(photoDTO.desc)"
+        cell.desc.text = "\(photoDTO.date)\n\(photoDTO.desc)"
         cell.photo.image = UIImage(data: photoDTO.data)
         
         return cell
