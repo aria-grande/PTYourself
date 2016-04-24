@@ -112,7 +112,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J0S-uv-tPO">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J0S-uv-tPO">
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="r1x-XW-Qzo">
@@ -481,7 +481,7 @@
         <scene sceneID="oGc-cH-J7l">
             <objects>
                 <navigationController storyboardIdentifier="ExerciseRecordNC" id="BT5-Mk-16Z" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Exercise Record" image="record-bar" selectedImage="record-bar" id="SyD-qC-P5s"/>
+                    <tabBarItem key="tabBarItem" title="Exercise Record" image="exerciseRecord-bar" selectedImage="exerciseRecord-bar" id="SyD-qC-P5s"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="uQu-oi-3Ex">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -807,6 +807,7 @@
     <resources>
         <image name="bodyHistory-bar" width="29" height="29"/>
         <image name="bodySizeMeasure.jpg" width="680" height="510"/>
+        <image name="exerciseRecord-bar" width="29" height="29"/>
         <image name="exercisingWoman.jpg" width="612" height="612"/>
         <image name="record-bar" width="29" height="29"/>
     </resources>
