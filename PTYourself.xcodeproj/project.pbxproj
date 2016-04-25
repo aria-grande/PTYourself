@@ -10,33 +10,33 @@
 		25A56FF360D47E85F20DF707 /* Pods_PTYourself.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99F130A1BE6205CEC1736F77 /* Pods_PTYourself.framework */; };
 		B88D9A70B4E7DAE8DCC664C9 /* Pods_PTYourselfTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA97CA99729A0081E71E216D /* Pods_PTYourselfTests.framework */; };
 		DE3F3F8E1CBEA96F001D937F /* start_image.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = DE3F3F8D1CBEA96F001D937F /* start_image.jpeg */; };
-		DE3F3F901CBFEA4D001D937F /* PhotoScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3F3F8F1CBFEA4D001D937F /* PhotoScrollViewController.swift */; };
-		DE3F3F921CC38079001D937F /* BodyHistoryTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3F3F911CC38079001D937F /* BodyHistoryTableTableViewController.swift */; };
 		DE3F3F961CCA13B5001D937F /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3F3F951CCA13B5001D937F /* Util.swift */; };
-		DE46A1591CCCAC2B00A7ACC1 /* ExerciseHistoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46A1581CCCAC2B00A7ACC1 /* ExerciseHistoryDetailViewController.swift */; };
-		DE8D1A251CB490ED009F9C75 /* ExerciseRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D1A241CB490ED009F9C75 /* ExerciseRecordViewController.swift */; };
-		DE8D1A271CB5EC16009F9C75 /* ModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D1A261CB5EC16009F9C75 /* ModelManager.swift */; };
-		DE8D1A2B1CB65C54009F9C75 /* AddNewExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D1A2A1CB65C54009F9C75 /* AddNewExerciseViewController.swift */; };
-		DE8D1A2D1CB65E5E009F9C75 /* PhotoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D1A2C1CB65E5E009F9C75 /* PhotoCollectionViewController.swift */; };
-		DE8D1A321CB743F6009F9C75 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D1A311CB743F6009F9C75 /* PhotoCollectionViewCell.swift */; };
-		DE8D1A381CB74A89009F9C75 /* RecordExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D1A371CB74A89009F9C75 /* RecordExerciseViewController.swift */; };
-		DE8F31F31CCCE1DF0016005D /* PhotoType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8F31F21CCCE1DF0016005D /* PhotoType.swift */; };
+		DE98ED681CCDF83E00385EA0 /* AddNewExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE98ED5C1CCDF83E00385EA0 /* AddNewExerciseViewController.swift */; };
+		DE98ED691CCDF83E00385EA0 /* BodyHistoryTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE98ED5D1CCDF83E00385EA0 /* BodyHistoryTableTableViewController.swift */; };
+		DE98ED6A1CCDF83E00385EA0 /* BodyInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE98ED5E1CCDF83E00385EA0 /* BodyInformationViewController.swift */; };
+		DE98ED6B1CCDF83E00385EA0 /* ExerciseHistoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE98ED5F1CCDF83E00385EA0 /* ExerciseHistoryDetailViewController.swift */; };
+		DE98ED6C1CCDF83E00385EA0 /* ExerciseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE98ED601CCDF83E00385EA0 /* ExerciseListViewController.swift */; };
+		DE98ED6D1CCDF83E00385EA0 /* ExerciseRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE98ED611CCDF83E00385EA0 /* ExerciseRecordViewController.swift */; };
+		DE98ED6E1CCDF83E00385EA0 /* PhotoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE98ED621CCDF83E00385EA0 /* PhotoCollectionViewController.swift */; };
+		DE98ED6F1CCDF83E00385EA0 /* PhotoScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE98ED631CCDF83E00385EA0 /* PhotoScrollViewController.swift */; };
+		DE98ED701CCDF83E00385EA0 /* RecordExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE98ED641CCDF83E00385EA0 /* RecordExerciseViewController.swift */; };
+		DE98ED711CCDF83E00385EA0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE98ED651CCDF83E00385EA0 /* ViewController.swift */; };
+		DE98ED721CCDF83E00385EA0 /* PhotoType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE98ED671CCDF83E00385EA0 /* PhotoType.swift */; };
+		DE98ED7B1CCE014E00385EA0 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE98ED741CCE014E00385EA0 /* Album.swift */; };
+		DE98ED7C1CCE014E00385EA0 /* Body.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE98ED751CCE014E00385EA0 /* Body.swift */; };
+		DE98ED7D1CCE014E00385EA0 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE98ED761CCE014E00385EA0 /* Exercise.swift */; };
+		DE98ED7E1CCE014E00385EA0 /* ModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE98ED771CCE014E00385EA0 /* ModelManager.swift */; };
+		DE98ED7F1CCE014E00385EA0 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE98ED781CCE014E00385EA0 /* Photo.swift */; };
+		DE98ED801CCE014E00385EA0 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE98ED791CCE014E00385EA0 /* Record.swift */; };
+		DE98ED811CCE014E00385EA0 /* Root.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE98ED7A1CCE014E00385EA0 /* Root.swift */; };
+		DE98ED841CCE015900385EA0 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE98ED831CCE015900385EA0 /* PhotoCollectionViewCell.swift */; };
+		DE98ED891CCE017400385EA0 /* bodySizeMeasure.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DE98ED861CCE017400385EA0 /* bodySizeMeasure.jpg */; };
+		DE98ED8A1CCE017400385EA0 /* exercisingWoman.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DE98ED871CCE017400385EA0 /* exercisingWoman.jpg */; };
 		DECFBD8D1C9C4800006B1AE6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECFBD8C1C9C4800006B1AE6 /* AppDelegate.swift */; };
-		DECFBD8F1C9C4800006B1AE6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECFBD8E1C9C4800006B1AE6 /* ViewController.swift */; };
 		DECFBD921C9C4800006B1AE6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DECFBD901C9C4800006B1AE6 /* Main.storyboard */; };
 		DECFBD941C9C4800006B1AE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DECFBD931C9C4800006B1AE6 /* Assets.xcassets */; };
 		DECFBD971C9C4800006B1AE6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DECFBD951C9C4800006B1AE6 /* LaunchScreen.storyboard */; };
 		DECFBDA21C9C4800006B1AE6 /* PTYourselfTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECFBDA11C9C4800006B1AE6 /* PTYourselfTests.swift */; };
-		DECFBDD11C9DB854006B1AE6 /* exercisingWoman.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DECFBDD01C9DB854006B1AE6 /* exercisingWoman.jpg */; };
-		DECFBDD51C9DB91B006B1AE6 /* bodySizeMeasure.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DECFBDD41C9DB91B006B1AE6 /* bodySizeMeasure.jpg */; };
-		DECFBDDB1C9EE1D8006B1AE6 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECFBDDA1C9EE1D8006B1AE6 /* Exercise.swift */; };
-		DECFBDE01C9EF2EC006B1AE6 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECFBDDF1C9EF2EC006B1AE6 /* Album.swift */; };
-		DECFBDE21C9EF309006B1AE6 /* Body.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECFBDE11C9EF309006B1AE6 /* Body.swift */; };
-		DECFBDE71C9EF356006B1AE6 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECFBDE61C9EF356006B1AE6 /* Photo.swift */; };
-		DECFBDE91C9EF369006B1AE6 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECFBDE81C9EF369006B1AE6 /* Record.swift */; };
-		DECFBDEB1C9EF39B006B1AE6 /* Root.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECFBDEA1C9EF39B006B1AE6 /* Root.swift */; };
-		DECFBDED1CA0026D006B1AE6 /* BodyInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECFBDEC1CA0026D006B1AE6 /* BodyInformationViewController.swift */; };
-		DECFBDF21CA0F305006B1AE6 /* ExerciseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECFBDF11CA0F305006B1AE6 /* ExerciseListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,21 +76,31 @@
 		99F130A1BE6205CEC1736F77 /* Pods_PTYourself.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PTYourself.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA97CA99729A0081E71E216D /* Pods_PTYourselfTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PTYourselfTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC303F6147649E1319C4AA75 /* Pods-PTYourselfTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PTYourselfTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PTYourselfTests/Pods-PTYourselfTests.debug.xcconfig"; sourceTree = "<group>"; };
-		DE3F3F8D1CBEA96F001D937F /* start_image.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = start_image.jpeg; sourceTree = "<group>"; };
-		DE3F3F8F1CBFEA4D001D937F /* PhotoScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoScrollViewController.swift; sourceTree = "<group>"; };
-		DE3F3F911CC38079001D937F /* BodyHistoryTableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyHistoryTableTableViewController.swift; sourceTree = "<group>"; };
+		DE3F3F8D1CBEA96F001D937F /* start_image.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = start_image.jpeg; path = ../../start_image.jpeg; sourceTree = "<group>"; };
 		DE3F3F951CCA13B5001D937F /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
-		DE46A1581CCCAC2B00A7ACC1 /* ExerciseHistoryDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseHistoryDetailViewController.swift; sourceTree = "<group>"; };
-		DE8D1A241CB490ED009F9C75 /* ExerciseRecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseRecordViewController.swift; sourceTree = "<group>"; };
-		DE8D1A261CB5EC16009F9C75 /* ModelManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelManager.swift; sourceTree = "<group>"; };
-		DE8D1A2A1CB65C54009F9C75 /* AddNewExerciseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewExerciseViewController.swift; sourceTree = "<group>"; };
-		DE8D1A2C1CB65E5E009F9C75 /* PhotoCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewController.swift; sourceTree = "<group>"; };
-		DE8D1A311CB743F6009F9C75 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
-		DE8D1A371CB74A89009F9C75 /* RecordExerciseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordExerciseViewController.swift; sourceTree = "<group>"; };
-		DE8F31F21CCCE1DF0016005D /* PhotoType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoType.swift; sourceTree = "<group>"; };
+		DE98ED5C1CCDF83E00385EA0 /* AddNewExerciseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewExerciseViewController.swift; sourceTree = "<group>"; };
+		DE98ED5D1CCDF83E00385EA0 /* BodyHistoryTableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyHistoryTableTableViewController.swift; sourceTree = "<group>"; };
+		DE98ED5E1CCDF83E00385EA0 /* BodyInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyInformationViewController.swift; sourceTree = "<group>"; };
+		DE98ED5F1CCDF83E00385EA0 /* ExerciseHistoryDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseHistoryDetailViewController.swift; sourceTree = "<group>"; };
+		DE98ED601CCDF83E00385EA0 /* ExerciseListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseListViewController.swift; sourceTree = "<group>"; };
+		DE98ED611CCDF83E00385EA0 /* ExerciseRecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseRecordViewController.swift; sourceTree = "<group>"; };
+		DE98ED621CCDF83E00385EA0 /* PhotoCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewController.swift; sourceTree = "<group>"; };
+		DE98ED631CCDF83E00385EA0 /* PhotoScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoScrollViewController.swift; sourceTree = "<group>"; };
+		DE98ED641CCDF83E00385EA0 /* RecordExerciseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordExerciseViewController.swift; sourceTree = "<group>"; };
+		DE98ED651CCDF83E00385EA0 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DE98ED671CCDF83E00385EA0 /* PhotoType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoType.swift; sourceTree = "<group>"; };
+		DE98ED741CCE014E00385EA0 /* Album.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		DE98ED751CCE014E00385EA0 /* Body.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Body.swift; sourceTree = "<group>"; };
+		DE98ED761CCE014E00385EA0 /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+		DE98ED771CCE014E00385EA0 /* ModelManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelManager.swift; sourceTree = "<group>"; };
+		DE98ED781CCE014E00385EA0 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		DE98ED791CCE014E00385EA0 /* Record.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
+		DE98ED7A1CCE014E00385EA0 /* Root.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Root.swift; sourceTree = "<group>"; };
+		DE98ED831CCE015900385EA0 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		DE98ED861CCE017400385EA0 /* bodySizeMeasure.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bodySizeMeasure.jpg; sourceTree = "<group>"; };
+		DE98ED871CCE017400385EA0 /* exercisingWoman.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = exercisingWoman.jpg; sourceTree = "<group>"; };
 		DECFBD891C9C4800006B1AE6 /* PTYourself.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PTYourself.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DECFBD8C1C9C4800006B1AE6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DECFBD8E1C9C4800006B1AE6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DECFBD911C9C4800006B1AE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DECFBD931C9C4800006B1AE6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DECFBD961C9C4800006B1AE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -99,16 +109,6 @@
 		DECFBDA11C9C4800006B1AE6 /* PTYourselfTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTYourselfTests.swift; sourceTree = "<group>"; };
 		DECFBDA31C9C4800006B1AE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DECFBDA81C9C4800006B1AE6 /* PTYourselfUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PTYourselfUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DECFBDD01C9DB854006B1AE6 /* exercisingWoman.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = exercisingWoman.jpg; path = PTYourself/exercisingWoman.jpg; sourceTree = "<group>"; };
-		DECFBDD41C9DB91B006B1AE6 /* bodySizeMeasure.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bodySizeMeasure.jpg; path = PTYourself/bodySizeMeasure.jpg; sourceTree = "<group>"; };
-		DECFBDDA1C9EE1D8006B1AE6 /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
-		DECFBDDF1C9EF2EC006B1AE6 /* Album.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
-		DECFBDE11C9EF309006B1AE6 /* Body.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Body.swift; sourceTree = "<group>"; };
-		DECFBDE61C9EF356006B1AE6 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
-		DECFBDE81C9EF369006B1AE6 /* Record.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
-		DECFBDEA1C9EF39B006B1AE6 /* Root.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Root.swift; sourceTree = "<group>"; };
-		DECFBDEC1CA0026D006B1AE6 /* BodyInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyInformationViewController.swift; sourceTree = "<group>"; };
-		DECFBDF11CA0F305006B1AE6 /* ExerciseListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,20 +147,61 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		DE8D1A301CB7363E009F9C75 /* Cell */ = {
+		DE98ED5B1CCDF83E00385EA0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				DE8D1A311CB743F6009F9C75 /* PhotoCollectionViewCell.swift */,
+				DE98ED5C1CCDF83E00385EA0 /* AddNewExerciseViewController.swift */,
+				DE98ED5D1CCDF83E00385EA0 /* BodyHistoryTableTableViewController.swift */,
+				DE98ED5E1CCDF83E00385EA0 /* BodyInformationViewController.swift */,
+				DE98ED5F1CCDF83E00385EA0 /* ExerciseHistoryDetailViewController.swift */,
+				DE98ED601CCDF83E00385EA0 /* ExerciseListViewController.swift */,
+				DE98ED611CCDF83E00385EA0 /* ExerciseRecordViewController.swift */,
+				DE98ED621CCDF83E00385EA0 /* PhotoCollectionViewController.swift */,
+				DE98ED631CCDF83E00385EA0 /* PhotoScrollViewController.swift */,
+				DE98ED641CCDF83E00385EA0 /* RecordExerciseViewController.swift */,
+				DE98ED651CCDF83E00385EA0 /* ViewController.swift */,
 			);
-			name = Cell;
+			path = Controller;
 			sourceTree = "<group>";
 		};
-		DE8F31F41CCCE1E90016005D /* Type */ = {
+		DE98ED661CCDF83E00385EA0 /* Type */ = {
 			isa = PBXGroup;
 			children = (
-				DE8F31F21CCCE1DF0016005D /* PhotoType.swift */,
+				DE98ED671CCDF83E00385EA0 /* PhotoType.swift */,
 			);
-			name = Type;
+			path = Type;
+			sourceTree = "<group>";
+		};
+		DE98ED731CCE014E00385EA0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DE98ED741CCE014E00385EA0 /* Album.swift */,
+				DE98ED751CCE014E00385EA0 /* Body.swift */,
+				DE98ED761CCE014E00385EA0 /* Exercise.swift */,
+				DE98ED771CCE014E00385EA0 /* ModelManager.swift */,
+				DE98ED781CCE014E00385EA0 /* Photo.swift */,
+				DE98ED791CCE014E00385EA0 /* Record.swift */,
+				DE98ED7A1CCE014E00385EA0 /* Root.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DE98ED821CCE015900385EA0 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				DE98ED831CCE015900385EA0 /* PhotoCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		DE98ED851CCE017400385EA0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DE98ED861CCE017400385EA0 /* bodySizeMeasure.jpg */,
+				DE98ED871CCE017400385EA0 /* exercisingWoman.jpg */,
+				DE3F3F8D1CBEA96F001D937F /* start_image.jpeg */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		DECFBD801C9C4800006B1AE6 = {
@@ -187,14 +228,14 @@
 		DECFBD8B1C9C4800006B1AE6 /* PTYourself */ = {
 			isa = PBXGroup;
 			children = (
-				DE8F31F41CCCE1E90016005D /* Type */,
-				DE8D1A301CB7363E009F9C75 /* Cell */,
-				DECFBDEE1CA02C21006B1AE6 /* Controller */,
-				DECFBD8C1C9C4800006B1AE6 /* AppDelegate.swift */,
-				DE3F3F951CCA13B5001D937F /* Util.swift */,
 				DECFBD901C9C4800006B1AE6 /* Main.storyboard */,
-				DECFBDDE1C9EF2C7006B1AE6 /* Model */,
-				DECFBDD91C9DD08E006B1AE6 /* Resources */,
+				DE3F3F951CCA13B5001D937F /* Util.swift */,
+				DECFBD8C1C9C4800006B1AE6 /* AppDelegate.swift */,
+				DE98ED731CCE014E00385EA0 /* Model */,
+				DE98ED821CCE015900385EA0 /* Cell */,
+				DE98ED5B1CCDF83E00385EA0 /* Controller */,
+				DE98ED661CCDF83E00385EA0 /* Type */,
+				DE98ED851CCE017400385EA0 /* Resources */,
 				DECFBDD61C9DBAD0006B1AE6 /* Supporting */,
 			);
 			path = PTYourself;
@@ -217,48 +258,6 @@
 				DECFBD981C9C4800006B1AE6 /* Info.plist */,
 			);
 			name = Supporting;
-			sourceTree = "<group>";
-		};
-		DECFBDD91C9DD08E006B1AE6 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				DE3F3F8D1CBEA96F001D937F /* start_image.jpeg */,
-				DECFBDD41C9DB91B006B1AE6 /* bodySizeMeasure.jpg */,
-				DECFBDD01C9DB854006B1AE6 /* exercisingWoman.jpg */,
-			);
-			name = Resources;
-			path = ..;
-			sourceTree = "<group>";
-		};
-		DECFBDDE1C9EF2C7006B1AE6 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				DE8D1A261CB5EC16009F9C75 /* ModelManager.swift */,
-				DECFBDEA1C9EF39B006B1AE6 /* Root.swift */,
-				DECFBDE11C9EF309006B1AE6 /* Body.swift */,
-				DECFBDDA1C9EE1D8006B1AE6 /* Exercise.swift */,
-				DECFBDE81C9EF369006B1AE6 /* Record.swift */,
-				DECFBDDF1C9EF2EC006B1AE6 /* Album.swift */,
-				DECFBDE61C9EF356006B1AE6 /* Photo.swift */,
-			);
-			name = Model;
-			sourceTree = "<group>";
-		};
-		DECFBDEE1CA02C21006B1AE6 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				DECFBD8E1C9C4800006B1AE6 /* ViewController.swift */,
-				DECFBDF11CA0F305006B1AE6 /* ExerciseListViewController.swift */,
-				DE8D1A241CB490ED009F9C75 /* ExerciseRecordViewController.swift */,
-				DE8D1A371CB74A89009F9C75 /* RecordExerciseViewController.swift */,
-				DE46A1581CCCAC2B00A7ACC1 /* ExerciseHistoryDetailViewController.swift */,
-				DE3F3F911CC38079001D937F /* BodyHistoryTableTableViewController.swift */,
-				DE8D1A2C1CB65E5E009F9C75 /* PhotoCollectionViewController.swift */,
-				DE3F3F8F1CBFEA4D001D937F /* PhotoScrollViewController.swift */,
-				DECFBDEC1CA0026D006B1AE6 /* BodyInformationViewController.swift */,
-				DE8D1A2A1CB65C54009F9C75 /* AddNewExerciseViewController.swift */,
-			);
-			name = Controller;
 			sourceTree = "<group>";
 		};
 		FD45C826C95864EAE922D1EA /* Pods */ = {
@@ -387,12 +386,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE98ED891CCE017400385EA0 /* bodySizeMeasure.jpg in Resources */,
 				DECFBD971C9C4800006B1AE6 /* LaunchScreen.storyboard in Resources */,
 				DECFBD941C9C4800006B1AE6 /* Assets.xcassets in Resources */,
 				DE3F3F8E1CBEA96F001D937F /* start_image.jpeg in Resources */,
-				DECFBDD11C9DB854006B1AE6 /* exercisingWoman.jpg in Resources */,
-				DECFBDD51C9DB91B006B1AE6 /* bodySizeMeasure.jpg in Resources */,
 				DECFBD921C9C4800006B1AE6 /* Main.storyboard in Resources */,
+				DE98ED8A1CCE017400385EA0 /* exercisingWoman.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -524,27 +523,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DECFBDE71C9EF356006B1AE6 /* Photo.swift in Sources */,
-				DECFBDEB1C9EF39B006B1AE6 /* Root.swift in Sources */,
-				DE46A1591CCCAC2B00A7ACC1 /* ExerciseHistoryDetailViewController.swift in Sources */,
-				DE3F3F921CC38079001D937F /* BodyHistoryTableTableViewController.swift in Sources */,
-				DE8D1A251CB490ED009F9C75 /* ExerciseRecordViewController.swift in Sources */,
-				DE3F3F901CBFEA4D001D937F /* PhotoScrollViewController.swift in Sources */,
-				DE8D1A2D1CB65E5E009F9C75 /* PhotoCollectionViewController.swift in Sources */,
+				DE98ED6C1CCDF83E00385EA0 /* ExerciseListViewController.swift in Sources */,
+				DE98ED7D1CCE014E00385EA0 /* Exercise.swift in Sources */,
+				DE98ED7E1CCE014E00385EA0 /* ModelManager.swift in Sources */,
+				DE98ED6A1CCDF83E00385EA0 /* BodyInformationViewController.swift in Sources */,
+				DE98ED6E1CCDF83E00385EA0 /* PhotoCollectionViewController.swift in Sources */,
+				DE98ED6B1CCDF83E00385EA0 /* ExerciseHistoryDetailViewController.swift in Sources */,
+				DE98ED721CCDF83E00385EA0 /* PhotoType.swift in Sources */,
+				DE98ED7B1CCE014E00385EA0 /* Album.swift in Sources */,
 				DE3F3F961CCA13B5001D937F /* Util.swift in Sources */,
-				DECFBD8F1C9C4800006B1AE6 /* ViewController.swift in Sources */,
+				DE98ED811CCE014E00385EA0 /* Root.swift in Sources */,
+				DE98ED691CCDF83E00385EA0 /* BodyHistoryTableTableViewController.swift in Sources */,
+				DE98ED841CCE015900385EA0 /* PhotoCollectionViewCell.swift in Sources */,
 				DECFBD8D1C9C4800006B1AE6 /* AppDelegate.swift in Sources */,
-				DECFBDDB1C9EE1D8006B1AE6 /* Exercise.swift in Sources */,
-				DE8F31F31CCCE1DF0016005D /* PhotoType.swift in Sources */,
-				DE8D1A2B1CB65C54009F9C75 /* AddNewExerciseViewController.swift in Sources */,
-				DECFBDF21CA0F305006B1AE6 /* ExerciseListViewController.swift in Sources */,
-				DE8D1A321CB743F6009F9C75 /* PhotoCollectionViewCell.swift in Sources */,
-				DE8D1A271CB5EC16009F9C75 /* ModelManager.swift in Sources */,
-				DECFBDED1CA0026D006B1AE6 /* BodyInformationViewController.swift in Sources */,
-				DECFBDE91C9EF369006B1AE6 /* Record.swift in Sources */,
-				DECFBDE01C9EF2EC006B1AE6 /* Album.swift in Sources */,
-				DECFBDE21C9EF309006B1AE6 /* Body.swift in Sources */,
-				DE8D1A381CB74A89009F9C75 /* RecordExerciseViewController.swift in Sources */,
+				DE98ED801CCE014E00385EA0 /* Record.swift in Sources */,
+				DE98ED7C1CCE014E00385EA0 /* Body.swift in Sources */,
+				DE98ED7F1CCE014E00385EA0 /* Photo.swift in Sources */,
+				DE98ED711CCDF83E00385EA0 /* ViewController.swift in Sources */,
+				DE98ED6F1CCDF83E00385EA0 /* PhotoScrollViewController.swift in Sources */,
+				DE98ED681CCDF83E00385EA0 /* AddNewExerciseViewController.swift in Sources */,
+				DE98ED6D1CCDF83E00385EA0 /* ExerciseRecordViewController.swift in Sources */,
+				DE98ED701CCDF83E00385EA0 /* RecordExerciseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

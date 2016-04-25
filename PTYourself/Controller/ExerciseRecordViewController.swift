@@ -23,15 +23,23 @@ class ExerciseRecordViewController: UIViewController, UITableViewDelegate, UITab
         recordTableView.dataSource = self
         recordTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
         
-        let graphViewFrame = self.graphView.frame
-        chartRect = CGRect(x: 0, y: 0, width: graphViewFrame.width*0.6, height: graphViewFrame.height*0.9)
-        chart.frame = chartRect
+        
         graphView.addSubview(chart)
         
         loadDynamicData()
     }
+    
+    override func viewWillLayoutSubviews() {
+        print("viewWillLayoutSubviews")
+        super.viewWillLayoutSubviews()
+        let graphViewFrame = self.graphView.frame
+        chartRect = CGRect(x: 0, y: 0, width: graphViewFrame.width, height: graphViewFrame.height)
+        chart.frame = chartRect
+        drawGraph()
+    }
 
     override func viewWillAppear(animated: Bool) {
+        print("viewwillApoear")
         super.viewWillAppear(animated)
         loadDynamicData()
         self.recordTableView.reloadData()
@@ -50,7 +58,7 @@ class ExerciseRecordViewController: UIViewController, UITableViewDelegate, UITab
         chart.minY = 0
         chart.maxY = 100
         chart.addSeries(series)
-        chart.setNeedsDisplay()
+        
     }
     
     private func loadDynamicData() {
@@ -61,6 +69,7 @@ class ExerciseRecordViewController: UIViewController, UITableViewDelegate, UITab
         
         setNavigationHeader()
         drawGraph()
+        chart.setNeedsDisplay()
         self.recordTableView.reloadData()
     }
     

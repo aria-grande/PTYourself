@@ -7,7 +7,7 @@ class ModelManager {
     static func convertURL(url:String) -> NSData {
         return NSData(contentsOfURL: NSURL(string: url)!)!
     }
-    static func setSampleData() {
+    class func setSampleData() {
         let realm = try! Realm()
 
         if realm.objects(Root.self).count > 0 {
