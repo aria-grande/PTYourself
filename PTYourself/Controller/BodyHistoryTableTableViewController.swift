@@ -19,15 +19,20 @@ class BodyHistoryTableTableViewController: UITableViewController {
         }
         
     }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return tableView.frame.height / 2 - 50
+    }
 
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! PhotoCollectionViewController
-        if segue.identifier == segueID4showBody {
+        let segueId = segue.identifier!
+        if segueId == segueID4showBody {
             vc.setPhotoType(PhotoType.body)
         }
-        else if segue.identifier == segueID4showInbody {
+        else if segueId == segueID4showInbody {
             vc.setPhotoType(PhotoType.inbody)
         }
     }

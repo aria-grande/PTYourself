@@ -16,8 +16,8 @@ class ModelManager {
             return
         }
         
-        let inbody = Photo(date: Date(), desc: "my beautiful body", data: UIImageJPEGRepresentation(UIImage(named: "running_woman.jpg")!, 0.7)!)
-        let body = Photo(date: Date(), desc: "inbody result!", data: UIImageJPEGRepresentation(UIImage(named: "running_woman.jpg")!, 0.7)!)
+        let body = Photo(date: Date(), desc: "my beautiful body", data: UIImageJPEGRepresentation(UIImage(named: "running_woman.jpg")!, 0.7)!)
+        let inbody = Photo(date: Date(), desc: "inbody result!", data: UIImageJPEGRepresentation(UIImage(named: "inbody_result.png")!, 0.7)!)
         let exercise1 = Exercise(name: "lunge 10 times", did: true)
         let exercise2 = Exercise(name: "squart 50 times", did: false)
         let exerciseList = List<Exercise>([exercise1, exercise2])
