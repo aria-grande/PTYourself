@@ -4,7 +4,7 @@ import UIKit
 class PhotoScrollViewController: UIViewController, UIScrollViewDelegate {
     
     var photo:Photo!
-    var photoType:PhotoType = PhotoType.None
+    var photoType:PhotoType = PhotoType.none
     
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var imageView: UIImageView!
@@ -15,26 +15,26 @@ class PhotoScrollViewController: UIViewController, UIScrollViewDelegate {
         self.scrollView.minimumZoomScale = 1.0
         self.scrollView.delegate = self
         
-        self.imageView.image = UIImage(data:photo.data)
+        self.imageView.image = UIImage(data:photo.data as Data)
         self.navigationItem.title = photo.desc
     }
 
-    @IBAction func removeThisPhoto(sender: UIBarButtonItem) {
-        if self.photoType == PhotoType.Body {
+    @IBAction func removeThisPhoto(_ sender: UIBarButtonItem) {
+        if self.photoType == PhotoType.body {
             ModelManager.removeBodyPhoto(self.photo)
         }
-        else if self.photoType == PhotoType.Inbody {
+        else if self.photoType == PhotoType.inbody {
             ModelManager.removeInbodyPhoto(self.photo)
         }
-        self.navigationController?.popViewControllerAnimated(true)
+        self.navigationController?.popViewController(animated: true)
     }
     
-    func setUIImageView(photo: Photo, type:PhotoType) {
+    func setUIImageView(_ photo: Photo, type:PhotoType) {
         self.photo = photo
         self.photoType = type
     }
     
-    func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return imageView
     }
 }

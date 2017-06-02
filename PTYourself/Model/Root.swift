@@ -5,16 +5,16 @@ class Root:Object {
     
     dynamic var bodyInformation:Body? = Body()
     dynamic var bodyHistoryPhotos:Album? = Album()
-    let exerciseList:List<Exercise> = List()
-    let records:List<Record> = List()
+    var exerciseList:List<Exercise> = List()
+    var records:List<Record> = List()
     
     static let sharedInstance = Root()
   
-    func addExercise(exercise:Exercise) {
+    func addExercise(_ exercise:Exercise) {
         exerciseList.append(exercise)
     }
     
-    func addRecord(record:Record) {
+    func addRecord(_ record:Record) {
         records.append(record)
     }
 }

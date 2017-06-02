@@ -4,11 +4,11 @@ import RealmSwift
 
 class ExerciseHistoryDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    private let exerciseCellID = "exercise4History"
+    fileprivate let exerciseCellID = "exercise4History"
     
-    private var record = Record()
-    private var doneExercises:Array<Exercise> = []
-    private var undoneExercises:Array<Exercise> = []
+    fileprivate var record = Record()
+    fileprivate var doneExercises:Array<Exercise> = []
+    fileprivate var undoneExercises:Array<Exercise> = []
     
     @IBOutlet var review: UITextView!
     @IBOutlet var exerciseRecord: UITableView!
@@ -18,7 +18,7 @@ class ExerciseHistoryDetailViewController: UIViewController, UITableViewDelegate
         
         self.exerciseRecord.delegate = self
         self.exerciseRecord.dataSource = self
-        self.exerciseRecord.registerClass(UITableViewCell.self, forCellReuseIdentifier: exerciseCellID)
+        self.exerciseRecord.register(UITableViewCell.self, forCellReuseIdentifier: exerciseCellID)
         self.navigationItem.title = self.record.date
         self.review.text = self.record.memo
         
@@ -28,16 +28,16 @@ class ExerciseHistoryDetailViewController: UIViewController, UITableViewDelegate
         }
     }
     
-    func setRecord(record:Record) {
+    func setRecord(_ record:Record) {
         self.record = record
     }
 
     // MARK: - exercise list table view
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             return self.undoneExercises.count
         }
@@ -46,7 +46,7 @@ class ExerciseHistoryDetailViewController: UIViewController, UITableViewDelegate
         }
     }
     
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0 {
             return "UNDONE EXERCISES"
         }
@@ -55,17 +55,17 @@ class ExerciseHistoryDetailViewController: UIViewController, UITableViewDelegate
         }
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(exerciseCellID, forIndexPath: indexPath)
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: exerciseCellID, for: indexPath)
         if indexPath.section == 0 {
             cell.textLabel?.text = self.undoneExercises[indexPath.row].name
-            cell.textLabel?.enabled = true
-            cell.accessoryType = UITableViewCellAccessoryType.None
+            cell.textLabel?.isEnabled = true
+            cell.accessoryType = UITableViewCellAccessoryType.none
         }
         else {
             cell.textLabel?.text = self.doneExercises[indexPath.row].name
-            cell.textLabel?.enabled = false
-            cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+            cell.textLabel?.isEnabled = false
+            cell.accessoryType = UITableViewCellAccessoryType.checkmark
         }
         
         return cell

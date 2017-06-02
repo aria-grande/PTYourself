@@ -2,37 +2,37 @@ import RealmSwift
 import Foundation
 
 class Util {
-    private static let todayDateTime = NSDate()
-    static var format = NSDateFormatter()
+    fileprivate static let todayDateTime = Date()
+    static var format = DateFormatter()
     
-    static func getYYYYMMDD(dateTime:NSDate) -> String {
+    static func getYYYYMMDD(_ dateTime:Date) -> String {
         format.dateFormat = "yyyy-MM-dd"
-        return format.stringFromDate(dateTime)
+        return format.string(from: dateTime)
     }
 
     static func getYesterdayDate() -> String {
         format.dateFormat = "yyyy-MM-dd";
-        return format.stringFromDate(todayDateTime.dateByAddingTimeInterval(-60*60*24))
+        return format.string(from: todayDateTime.addingTimeInterval(-60*60*24))
     }
     
     static func getTodayDate() -> String {
-        return getYYYYMMDD(NSDate())
+        return getYYYYMMDD(Date())
     }
     
     
-    static func getCountOfDoneExercises(exerciseList:[String:Bool]) -> Int {
+    static func getCountOfDoneExercises(_ exerciseList:[String:Bool]) -> Int {
         return exerciseList.filter { $1 == true }.count
     }
     
-    static func getCountOfDoneExercises(exerciseList:List<Exercise>) -> Int {
+    static func getCountOfDoneExercises(_ exerciseList:List<Exercise>) -> Int {
         return exerciseList.filter("did=%@", true).count
     }
     
-    static func calculateMissionCompleteRate(exerciseList:List<Exercise>) -> Int {
+    static func calculateMissionCompleteRate(_ exerciseList:List<Exercise>) -> Int {
         return Int(100*getCountOfDoneExercises(exerciseList)/exerciseList.count)
     }
     
-    static func calculateMissionCompleteRate(exerciseList:[String:Bool]) -> Int {
+    static func calculateMissionCompleteRate(_ exerciseList:[String:Bool]) -> Int {
         return Int(100*getCountOfDoneExercises(exerciseList)/exerciseList.count)
     }
 }

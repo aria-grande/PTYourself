@@ -2,11 +2,11 @@ import Foundation
 import RealmSwift
 
 class Photo:Object {
-    dynamic var date = NSDate()
+    dynamic var date = Date()
     dynamic var desc = ""
-    dynamic var data = NSData()
+    dynamic var data = Data()
     
-    convenience init(date:NSDate, desc:String, data:NSData) {
+    convenience init(date:Date, desc:String, data:Data) {
         self.init()
         self.date = date
         self.desc = desc

@@ -1,0 +1,20 @@
+PODS:
+  - Realm (2.7.0):
+    - Realm/Headers (= 2.7.0)
+  - Realm/Headers (2.7.0)
+  - RealmSwift (2.7.0):
+    - Realm (= 2.7.0)
+  - SwiftChart (0.5.0)
+
+DEPENDENCIES:
+  - RealmSwift
+  - SwiftChart
+
+SPEC CHECKSUMS:
+  Realm: 07e5d3a9e0e41d65fd5f9f05150ed6295d0f093b
+  RealmSwift: 6d06425d3900c86473c4f323bf6949b43fca22bc
+  SwiftChart: d1d22d2b1c4582f4d561edf97a210059c00ee256
+
+PODFILE CHECKSUM: 24da3076fd8ed3a7291e17fec17bfcfe9e3345d2
+
+COCOAPODS: 1.2.0

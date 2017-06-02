@@ -18,7 +18,7 @@ class Record:Object {
         self.memo = memo
         self.missionCompleteRate = missionCompleteRate
         self.exerciseList.removeAll()
-        self.exerciseList.appendContentsOf(ModelManager.getExerciseList())
+        self.exerciseList.append(objectsIn: ModelManager.getExerciseList())
     }
     
     convenience init(date:String, memo:String, missionCompleteRate:Int, exerciseList:List<Exercise>) {
@@ -27,17 +27,17 @@ class Record:Object {
         self.memo = memo
         self.missionCompleteRate = missionCompleteRate
         self.exerciseList.removeAll()
-        self.exerciseList.appendContentsOf(exerciseList)
+        self.exerciseList.append(objectsIn: exerciseList)
     }
     
-    func updateExerciseRecord(exerciseDict:[String:Bool]) {
+    func updateExerciseRecord(_ exerciseDict:[String:Bool]) {
         self.exerciseList.removeAll()
         for (name, did) in exerciseDict {
             self.exerciseList.append(Exercise(name:name, did:did))
         }
     }
     
-    static func convert(exerciseDict:[String:Bool]) -> List<Exercise> {
+    static func convert(_ exerciseDict:[String:Bool]) -> List<Exercise> {
         let list = List<Exercise>()
         for (name, did) in exerciseDict {
             list.append(Exercise(name: name, did: did))

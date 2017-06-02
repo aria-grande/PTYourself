@@ -1,0 +1,7 @@
+build/
+
+*.pbxuser
+!default.pbxuser
+xcuserdata/
+
+Pods/

@@ -1,5 +1,5 @@
 enum PhotoType {
-    case Inbody
-    case Body
-    case None
+    case inbody
+    case body
+    case none
 }

@@ -4,19 +4,20 @@ import RealmSwift
 
 class ModelManager {
     // MARK - for test
-    static func convertURL(url:String) -> NSData {
-        return NSData(contentsOfURL: NSURL(string: url)!)!
+    static func convertURL(_ url:String) -> Data {
+        return (try! Data(contentsOf: URL(string: url)!))
     }
+    
     class func setSampleData() {
         let realm = try! Realm()
 
         if realm.objects(Root.self).count > 0 {
-            print(realm.objects(Root.self))
+            print("data is already set, will not load the sample data")
             return
         }
         
-        let inbody = Photo(date: NSDate(), desc: "my beautiful body", data: convertURL("https://pub.chosun.com/editor/cheditor_new/attach/IE1KGC6OQPOPFN5JCWIB.jpg"))
-        let body = Photo(date: NSDate(), desc: "inbody result!", data: convertURL("https://pub.chosun.com/editor/cheditor_new/attach/IE1KGC6OQPOPFN5JCWIB.jpg"))
+        let inbody = Photo(date: Date(), desc: "my beautiful body", data: UIImageJPEGRepresentation(UIImage(named: "running_woman.jpg")!, 0.7)!)
+        let body = Photo(date: Date(), desc: "inbody result!", data: UIImageJPEGRepresentation(UIImage(named: "running_woman.jpg")!, 0.7)!)
         let exercise1 = Exercise(name: "lunge 10 times", did: true)
         let exercise2 = Exercise(name: "squart 50 times", did: false)
         let exerciseList = List<Exercise>([exercise1, exercise2])
@@ -38,7 +39,7 @@ class ModelManager {
     private static var data = Root()
     
     static func getData() -> Root {
-        data = realm.objects(Root).first!
+        data = realm.objects(Root.self).first!
         return data
     }
     
@@ -47,11 +48,11 @@ class ModelManager {
     }
     
     static func getMissionCompleteRates() -> Array<Float> {
-        return data.records.sort({$0.date < $1.date}).map({Float($0.missionCompleteRate)})
+        return data.records.sorted(by: {$0.date < $1.date}).map({Float($0.missionCompleteRate)})
     }
     
     static func getRecordsDate() -> [String] {
-        return data.records.sort({$0.date < $1.date}).map({($0.date as NSString).substringWithRange(NSRange(location: 8, length: 2))})
+        return data.records.sorted(by: {$0.date < $1.date}).map({($0.date as NSString).substring(with: NSRange(location: 8, length: 2))})
     }
     
     static func removeAll() {
@@ -60,43 +61,43 @@ class ModelManager {
         }
     }
     
-    static func addInbodyPhoto(photo:Photo) {
+    static func addInbodyPhoto(_ photo:Photo) {
         try! realm.write {
             data.bodyHistoryPhotos?.addInbodyPhoto(photo)
         }
     }
     
-    static func removeBodyPhoto(photo:Photo) {
+    static func removeBodyPhoto(_ photo:Photo) {
         try! realm.write {
             data.bodyHistoryPhotos?.removeBodyPhoto(photo)
         }
     }
     
-    static func removeInbodyPhoto(photo:Photo) {
+    static func removeInbodyPhoto(_ photo:Photo) {
         try! realm.write {
             data.bodyHistoryPhotos?.removeInbodyPhoto(photo)
         }
     }
     
-    static func addBodyPhoto(photo:Photo) {
+    static func addBodyPhoto(_ photo:Photo) {
         try! realm.write {
             data.bodyHistoryPhotos?.addBodyPhoto(photo)
         }
     }
     
-    static func writeBodyInformation(bodyInfo:Body) {
+    static func writeBodyInformation(_ bodyInfo:Body) {
         try! realm.write {
             data.bodyInformation = bodyInfo
         }
     }
     
-    static func updatePhotoDescription(photoType:PhotoType, photo:Photo, newDesc:String) {
+    static func updatePhotoDescription(_ photoType:PhotoType, photo:Photo, newDesc:String) {
         try! realm.write {
             var photos = List<Photo>()
-            if photoType == PhotoType.Body {
+            if photoType == PhotoType.body {
                 photos = (self.data.bodyHistoryPhotos?.body)!
             }
-            else if photoType == PhotoType.Inbody {
+            else if photoType == PhotoType.inbody {
                 photos = (self.data.bodyHistoryPhotos?.inbody)!
             }
             
@@ -114,7 +115,7 @@ class ModelManager {
         }
     }
     
-    static func updateRecord(record:Record, memo:String, missionCompleteRate:Int, exerciseDict:[String:Bool]) {
+    static func updateRecord(_ record:Record, memo:String, missionCompleteRate:Int, exerciseDict:[String:Bool]) {
         try! realm.write {
             record.memo = memo
             record.missionCompleteRate = missionCompleteRate
@@ -122,30 +123,30 @@ class ModelManager {
         }
     }
     
-    static func addRecord(record:Record) {
+    static func addRecord(_ record:Record) {
         try! realm.write {
             data.records.append(record)
         }
     }
     
-    static func deleteExerciseFromTodayRecord(name:String) {
+    static func deleteExerciseFromTodayRecord(_ name:String) {
         try! realm.write {
-            let todayExerciseList = data.records.filter("date=%@", Util.getTodayDate()).first?.exerciseList
+            var todayExerciseList = data.records.filter("date=%@", Util.getTodayDate()).first?.exerciseList
             if let exercise:Exercise = todayExerciseList?.filter("name=%@", name).first {
-                todayExerciseList?.removeAtIndex(todayExerciseList!.indexOf(exercise)!)
+                todayExerciseList?.remove(at: todayExerciseList!.index(of: exercise)!)
             }
         }
     }
     
-    static func addExerciseToList(title:String) {
+    static func addExerciseToList(_ title:String) {
         try! realm.write {
             data.addExercise(Exercise(name: title, did: false))
         }
     }
     
-    static func deleteExerciseFromList(index:Int) {
+    static func deleteExerciseFromList(_ index:Int) {
         try! realm.write {
-            data.exerciseList.removeAtIndex(index)
+            data.exerciseList.remove(at: index)
         }
     }
 }

@@ -2,8 +2,8 @@ import Foundation
 import RealmSwift
 
 class Album:Object {
-    let inbody = List<Photo>()
-    let body = List<Photo>()
+    var inbody = List<Photo>()
+    var body = List<Photo>()
     
     convenience init(inbody:Photo, body:Photo) {
         self.init()
@@ -11,23 +11,23 @@ class Album:Object {
         addBodyPhoto(body)
     }
     
-    func addInbodyPhoto(inbodyPhoto:Photo) {
+    func addInbodyPhoto(_ inbodyPhoto:Photo) {
         inbody.append(inbodyPhoto)
     }
     
-    func removeBodyPhoto(bodyPhoto:Photo) {
-        if let index = body.indexOf(bodyPhoto) {
-            body.removeAtIndex(index)
+    func removeBodyPhoto(_ bodyPhoto:Photo) {
+        if let index = body.index(of: bodyPhoto) {
+            body.remove(at: index)
         }
     }
     
-    func removeInbodyPhoto(inbodyPhoto:Photo) {
-        if let index = inbody.indexOf(inbodyPhoto) {
-            inbody.removeAtIndex(index)
+    func removeInbodyPhoto(_ inbodyPhoto:Photo) {
+        if let index = inbody.index(of: inbodyPhoto) {
+            inbody.remove(at: index)
         }
     }
     
-    func addBodyPhoto(bodyPhoto:Photo) {
+    func addBodyPhoto(_ bodyPhoto:Photo) {
         body.append(bodyPhoto)
     }
 }
