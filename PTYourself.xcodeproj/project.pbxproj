@@ -10,6 +10,8 @@
 		25A56FF360D47E85F20DF707 /* Pods_PTYourself.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99F130A1BE6205CEC1736F77 /* Pods_PTYourself.framework */; };
 		DE3F3F8E1CBEA96F001D937F /* start_image.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = DE3F3F8D1CBEA96F001D937F /* start_image.jpeg */; };
 		DE3F3F961CCA13B5001D937F /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3F3F951CCA13B5001D937F /* Util.swift */; };
+		DE6E584A1EE4E705004ECA61 /* inbody_result.png in Resources */ = {isa = PBXBuildFile; fileRef = DE6E58491EE4E705004ECA61 /* inbody_result.png */; };
+		DE6E584C1EE4E7E9004ECA61 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE6E584B1EE4E7E9004ECA61 /* Info.plist */; };
 		DE98ED681CCDF83E00385EA0 /* AddNewExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE98ED5C1CCDF83E00385EA0 /* AddNewExerciseViewController.swift */; };
 		DE98ED691CCDF83E00385EA0 /* BodyHistoryTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE98ED5D1CCDF83E00385EA0 /* BodyHistoryTableTableViewController.swift */; };
 		DE98ED6A1CCDF83E00385EA0 /* BodyInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE98ED5E1CCDF83E00385EA0 /* BodyInformationViewController.swift */; };
@@ -32,7 +34,6 @@
 		DE98ED891CCE017400385EA0 /* bodySizeMeasure.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DE98ED861CCE017400385EA0 /* bodySizeMeasure.jpg */; };
 		DE98ED8A1CCE017400385EA0 /* exercisingWoman.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DE98ED871CCE017400385EA0 /* exercisingWoman.jpg */; };
 		DE9F72A71EE16F0F001AD00D /* running_woman.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DE9F72A61EE16F0F001AD00D /* running_woman.jpg */; };
-		DE9F72A91EE18594001AD00D /* inbody_result.png in Resources */ = {isa = PBXBuildFile; fileRef = DE9F72A81EE18594001AD00D /* inbody_result.png */; };
 		DECFBD8D1C9C4800006B1AE6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECFBD8C1C9C4800006B1AE6 /* AppDelegate.swift */; };
 		DECFBD921C9C4800006B1AE6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DECFBD901C9C4800006B1AE6 /* Main.storyboard */; };
 		DECFBD941C9C4800006B1AE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DECFBD931C9C4800006B1AE6 /* Assets.xcassets */; };
@@ -64,6 +65,8 @@
 		B319EDB7BA53FB4754A35B04 /* Pods-PTYourselfUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PTYourselfUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PTYourselfUITests/Pods-PTYourselfUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DE3F3F8D1CBEA96F001D937F /* start_image.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = start_image.jpeg; path = ../../start_image.jpeg; sourceTree = "<group>"; };
 		DE3F3F951CCA13B5001D937F /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		DE6E58491EE4E705004ECA61 /* inbody_result.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = inbody_result.png; sourceTree = "<group>"; };
+		DE6E584B1EE4E7E9004ECA61 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE98ED5C1CCDF83E00385EA0 /* AddNewExerciseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewExerciseViewController.swift; sourceTree = "<group>"; };
 		DE98ED5D1CCDF83E00385EA0 /* BodyHistoryTableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyHistoryTableTableViewController.swift; sourceTree = "<group>"; };
 		DE98ED5E1CCDF83E00385EA0 /* BodyInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyInformationViewController.swift; sourceTree = "<group>"; };
@@ -86,14 +89,12 @@
 		DE98ED861CCE017400385EA0 /* bodySizeMeasure.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bodySizeMeasure.jpg; sourceTree = "<group>"; };
 		DE98ED871CCE017400385EA0 /* exercisingWoman.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = exercisingWoman.jpg; sourceTree = "<group>"; };
 		DE9F72A61EE16F0F001AD00D /* running_woman.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = running_woman.jpg; path = ../../../../../running_woman.jpg; sourceTree = "<group>"; };
-		DE9F72A81EE18594001AD00D /* inbody_result.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = inbody_result.png; path = ../../../../../inbody_result.png; sourceTree = "<group>"; };
 		DECFBD891C9C4800006B1AE6 /* PTYourself.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PTYourself.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DECFBD8C1C9C4800006B1AE6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DECFBD911C9C4800006B1AE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DECFBD931C9C4800006B1AE6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DECFBD961C9C4800006B1AE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DECFBD981C9C4800006B1AE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DECFBDA31C9C4800006B1AE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = PTYourselfTests/Info.plist; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,7 +169,7 @@
 		DE98ED851CCE017400385EA0 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				DE9F72A81EE18594001AD00D /* inbody_result.png */,
+				DE6E58491EE4E705004ECA61 /* inbody_result.png */,
 				DE9F72A61EE16F0F001AD00D /* running_woman.jpg */,
 				DE98ED861CCE017400385EA0 /* bodySizeMeasure.jpg */,
 				DE98ED871CCE017400385EA0 /* exercisingWoman.jpg */,
@@ -198,7 +199,7 @@
 		DECFBD8B1C9C4800006B1AE6 /* PTYourself */ = {
 			isa = PBXGroup;
 			children = (
-				DECFBDA31C9C4800006B1AE6 /* Info.plist */,
+				DE6E584B1EE4E7E9004ECA61 /* Info.plist */,
 				DECFBD901C9C4800006B1AE6 /* Main.storyboard */,
 				DE3F3F951CCA13B5001D937F /* Util.swift */,
 				DECFBD8C1C9C4800006B1AE6 /* AppDelegate.swift */,
@@ -302,12 +303,13 @@
 			files = (
 				DE98ED891CCE017400385EA0 /* bodySizeMeasure.jpg in Resources */,
 				DECFBD971C9C4800006B1AE6 /* LaunchScreen.storyboard in Resources */,
+				DE6E584C1EE4E7E9004ECA61 /* Info.plist in Resources */,
 				DE9F72A71EE16F0F001AD00D /* running_woman.jpg in Resources */,
 				DECFBD941C9C4800006B1AE6 /* Assets.xcassets in Resources */,
+				DE6E584A1EE4E705004ECA61 /* inbody_result.png in Resources */,
 				DE3F3F8E1CBEA96F001D937F /* start_image.jpeg in Resources */,
 				DECFBD921C9C4800006B1AE6 /* Main.storyboard in Resources */,
 				DE98ED8A1CCE017400385EA0 /* exercisingWoman.jpg in Resources */,
-				DE9F72A91EE18594001AD00D /* inbody_result.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
