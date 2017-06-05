@@ -179,7 +179,7 @@
                                 <rect key="frame" x="41.5" y="0.0" width="292" height="271"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="293" height="271"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="292" height="271"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016.03.16" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgH-Hp-16o">
@@ -802,10 +802,13 @@
                     <navigationItem key="navigationItem" title="Exercise List" id="Uqa-bq-7gA">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Lfk-1G-Eoz">
                             <connections>
-                                <segue destination="KEm-Wt-TsR" kind="show" id="hGI-Bs-c0m"/>
+                                <segue destination="KEm-Wt-TsR" kind="show" identifier="addNewExercise" id="YMT-M9-54i"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="KEm-Wt-TsR" kind="show" identifier="editExercise" id="xdo-QA-Ce4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gca-Lx-QF2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -823,28 +826,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a new exercise!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hXZ-26-Trb">
-                                <rect key="frame" x="98" y="185" width="180" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter what you will do for exercise" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u5W-Jc-xce">
-                                <rect key="frame" x="47" y="258" width="281" height="50"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter what you will do for exercise" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u5W-Jc-xce" userLabel="exercise">
+                                <rect key="frame" x="47" y="254" width="281" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="UU6-3W-rnv"/>
                                     <constraint firstAttribute="width" constant="281" id="wwo-DQ-lUw"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g2h-sN-zTL" userLabel="errormessage">
+                                <rect key="frame" x="47" y="227" width="281" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.20392156859999999" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="u5W-Jc-xce" firstAttribute="top" secondItem="hXZ-26-Trb" secondAttribute="bottom" constant="49" id="DBW-4e-Afq"/>
-                            <constraint firstItem="hXZ-26-Trb" firstAttribute="centerX" secondItem="u5W-Jc-xce" secondAttribute="centerX" id="Qe1-be-dpM"/>
-                            <constraint firstItem="hXZ-26-Trb" firstAttribute="centerX" secondItem="0P4-X2-rCS" secondAttribute="centerX" id="VzK-bu-men"/>
-                            <constraint firstItem="hXZ-26-Trb" firstAttribute="top" secondItem="jNn-2B-IRh" secondAttribute="bottom" constant="121" id="r2v-2t-2yn"/>
+                            <constraint firstItem="u5W-Jc-xce" firstAttribute="leading" secondItem="g2h-sN-zTL" secondAttribute="leading" id="2y6-UU-zKc"/>
+                            <constraint firstItem="u5W-Jc-xce" firstAttribute="top" secondItem="g2h-sN-zTL" secondAttribute="bottom" constant="27" id="Pxt-bI-ceV"/>
+                            <constraint firstItem="g2h-sN-zTL" firstAttribute="leading" secondItem="0P4-X2-rCS" secondAttribute="leadingMargin" constant="31" id="Tix-LZ-apz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="g2h-sN-zTL" secondAttribute="trailing" constant="31" id="Zrk-hx-X2b"/>
+                            <constraint firstItem="wLr-QT-iEL" firstAttribute="top" secondItem="u5W-Jc-xce" secondAttribute="bottom" constant="334" id="d8O-1I-HEP"/>
+                            <constraint firstItem="g2h-sN-zTL" firstAttribute="width" secondItem="u5W-Jc-xce" secondAttribute="width" id="dse-lZ-NWU"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="운동 등록" id="DYf-eH-ylF">
@@ -855,12 +859,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="newExercise" destination="u5W-Jc-xce" id="5ZD-vu-omc"/>
+                        <outlet property="errorMessage" destination="g2h-sN-zTL" id="zNB-Fa-aIG"/>
+                        <outlet property="newExercise" destination="u5W-Jc-xce" id="NhE-7Q-9QK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2kK-z7-3Om" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2334" y="1860"/>
+            <point key="canvasLocation" x="2333.5999999999999" y="1859.8200899550227"/>
         </scene>
     </scenes>
     <resources>
@@ -871,5 +876,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="pjn-jR-a3c"/>
+        <segue reference="xdo-QA-Ce4"/>
     </inferredMetricsTieBreakers>
 </document>

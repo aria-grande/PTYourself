@@ -138,9 +138,20 @@ class ModelManager {
         }
     }
     
-    static func addExerciseToList(_ title:String) {
+    static func addExerciseToList(_ name:String) {
         try! realm.write {
-            data.addExercise(Exercise(name: title, did: false))
+            data.addExercise(Exercise(name: name, did: false))
+        }
+    }
+    
+    static func findExerciseBy(_ name: String) -> Exercise? {
+        let rs = getExerciseList().filter("name = \(name)")
+        return rs.isEmpty ? nil : rs.first!
+    }
+    
+    static func updateExercise(exercise:Exercise, newName:String) {
+        try! realm.write {
+            exercise.name = newName
         }
     }
     

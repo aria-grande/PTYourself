@@ -4,15 +4,36 @@ import RealmSwift
 
 class AddNewExerciseViewController: UIViewController {
 
+    private var onEdit:Bool = false
+    private var editingExercise:Exercise?
+    
     @IBOutlet var newExercise: UITextField!
-
+    @IBOutlet var errorMessage: UILabel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        if let e = editingExercise, !e.name.isEmpty && onEdit {
+            self.newExercise.text = e.name
+        }
+    }
+    
     @IBAction func saveNewExercise(_ sender: AnyObject) {
-        if let exercise = newExercise.text, !exercise.isEmpty {
-            ModelManager.addExerciseToList(newExercise.text!)
+        if let newName = newExercise.text, !newName.isEmpty {
+            if let exec = editingExercise, onEdit {
+                ModelManager.updateExercise(exercise: exec, newName: newName)
+            }
+            else {
+                ModelManager.addExerciseToList(newName)
+            }
+            self.navigationController?.popViewController(animated: true)
         }
         else {
-            print("내용을 입력해 주세요")    // todo: make alert
+            errorMessage.text = "내용을 입력해 주세요"
         }
-        self.navigationController?.popViewController(animated: true)
+    }
+    
+    func setExercise(exercise: Exercise) {
+        editingExercise = exercise
+        onEdit = true
     }
 }

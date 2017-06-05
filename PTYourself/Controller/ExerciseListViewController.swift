@@ -4,9 +4,12 @@ import RealmSwift
 class ExerciseListViewController: UITableViewController {
 
     private let cellID = "exercise"
+    private let editExerciseSegueId = "editExercise"
     
     private var data:Root = Root()
     private var exerciseList:List<Exercise> = List()
+    
+    private var selectedExercise:Exercise?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +41,12 @@ class ExerciseListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
-
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.selectedExercise = exerciseList[indexPath.row]
+        self.performSegue(withIdentifier: editExerciseSegueId, sender: self)
+    }
+    
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             ModelManager.deleteExerciseFromTodayRecord(exerciseList[indexPath.row].name)
@@ -51,5 +59,17 @@ class ExerciseListViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         return true
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! AddNewExerciseViewController
+        if segue.identifier == editExerciseSegueId {
+            if let se = self.selectedExercise {
+                vc.setExercise(exercise: se)
+            }
+            else {
+                print("error occurred. selected exercise did not assigned.")
+            }
+        }
     }
 }
