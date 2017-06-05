@@ -65,7 +65,7 @@ class ExerciseRecordViewController: UIViewController, UITableViewDelegate, UITab
         let data = ModelManager.getData()
         self.records.removeAll()
         
-        data.records.sorted(byKeyPath: "date").forEach { (record) in
+        data.records.sorted(byKeyPath: "date", ascending: false).forEach { (record) in
             self.records.append(record)
         }
         self.bodyInformation = data.bodyInformation!
