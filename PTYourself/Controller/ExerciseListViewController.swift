@@ -15,6 +15,11 @@ class ExerciseListViewController: UITableViewController {
         exerciseList = data.exerciseList
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.tableView.reloadData()
+    }
+    
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
