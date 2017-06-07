@@ -31,7 +31,7 @@ class RecordExerciseViewController: UIViewController, UITableViewDelegate, UITab
     
     @IBAction func saveRecord(_ sender: AnyObject) {
         let missionCompleteRate = Util.calculateMissionCompleteRate(todayExerciseList)
-        if recordIsNowCreated {
+        if self.recordIsNowCreated {
             ModelManager.addRecord(Record(date: Util.getTodayDate(), memo: memo.text, missionCompleteRate: missionCompleteRate, exerciseList: Record.convert(self.todayExerciseList)))
         }
         else {
@@ -41,19 +41,17 @@ class RecordExerciseViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     fileprivate func setData() {
-        let data = ModelManager.getData()
-        let recordRealmObject = data.records.filter("date=%@", Util.getTodayDate())
-        if  recordRealmObject.count > 0 {
-            todayRecord = recordRealmObject.first!
+        if let tr = ModelManager.getTodayRecord() {
+            todayRecord = tr
         }
         else {
-            recordIsNowCreated = true
+            self.recordIsNowCreated = true
             todayRecord = Record(date: Util.getTodayDate(), memo: "", missionCompleteRate: 0)
         }
         
         self.memo.text = self.todayRecord.memo
         // for adding newly added exercise
-        for exercise in data.exerciseList {
+        for exercise in ModelManager.getExerciseList() {
             self.todayExerciseList[exercise.name] = exercise.did
         }
         // for setting the value of done
@@ -65,7 +63,6 @@ class RecordExerciseViewController: UIViewController, UITableViewDelegate, UITab
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.todayExerciseList.count

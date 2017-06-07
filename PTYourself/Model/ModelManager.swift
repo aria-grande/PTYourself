@@ -18,18 +18,17 @@ class ModelManager {
         
         let body = Photo(date: Date(), desc: "my beautiful body", data: UIImageJPEGRepresentation(UIImage(named: "running_woman.jpg")!, 0.7)!)
         let inbody = Photo(date: Date(), desc: "inbody result!", data: UIImageJPEGRepresentation(UIImage(named: "inbody_result.png")!, 0.7)!)
-        let exercise1 = Exercise(name: "lunge 10 times", did: true)
+        let exercise1 = Exercise(name: "lunge 10 times", did: false)
         let exercise2 = Exercise(name: "squart 50 times", did: false)
         let exerciseList = List<Exercise>([exercise1, exercise2])
         
         try! realm.write {
             let root = realm.create(Root.self)
-            root.bodyInformation = Body(height: 166.7, weight: 50.0)
+            root.bodyInformation = Body(height: 160.0, weight: 50.0)
             root.bodyHistoryPhotos = Album(inbody: inbody, body: body)
             root.addExercise(exercise1)
             root.addExercise(exercise2)
-            root.addRecord(Record(date: Util.getTodayDate(), memo: "Test memo", missionCompleteRate: 50, exerciseList: exerciseList))
-            root.addRecord(Record(date: Util.getYesterdayDate(), memo: "Test memo", missionCompleteRate: 50, exerciseList: exerciseList))
+            root.addRecord(Record(date: Util.getYesterdayDate(), memo: "Test memo", missionCompleteRate: 0, exerciseList: exerciseList))
         }
     }
     
@@ -59,6 +58,10 @@ class ModelManager {
         try! realm.write {
             realm.deleteAll()
         }
+    }
+    
+    static func getTodayRecord() -> Record? {
+        return data.records.filter("date=%@", Util.getTodayDate()).first
     }
     
     static func addInbodyPhoto(_ photo:Photo) {
@@ -109,7 +112,7 @@ class ModelManager {
     
     static func updateTodayRecordMissionComplete() {
         try! realm.write {
-            if let todayRecord:Record = data.records.filter("date=%@", Util.getTodayDate()).first {
+            if let todayRecord:Record = getTodayRecord() {
                 todayRecord.missionCompleteRate = Util.calculateMissionCompleteRate(todayRecord.exerciseList)
             }
         }
@@ -131,9 +134,9 @@ class ModelManager {
     
     static func deleteExerciseFromTodayRecord(_ name:String) {
         try! realm.write {
-            var todayExerciseList = data.records.filter("date=%@", Util.getTodayDate()).first?.exerciseList
-            if let exercise:Exercise = todayExerciseList?.filter("name=%@", name).first {
-                todayExerciseList?.remove(at: todayExerciseList!.index(of: exercise)!)
+            if let todayExerciseList = getTodayRecord()?.exerciseList,
+                let exercise:Exercise = todayExerciseList.filter("name=%@", name).first {
+                todayExerciseList.remove(objectAtIndex: todayExerciseList.index(of: exercise)!)
             }
         }
     }
@@ -152,6 +155,10 @@ class ModelManager {
     static func updateExercise(exercise:Exercise, newName:String) {
         try! realm.write {
             exercise.name = newName
+            // also needs to update the name of the exercise of today record
+            if let todayRecord:Record = getTodayRecord(), let idx = todayRecord.exerciseList.index(of: exercise) {
+                todayRecord.exerciseList[idx].name = newName
+            }
         }
     }
     
