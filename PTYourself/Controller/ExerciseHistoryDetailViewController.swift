@@ -48,10 +48,10 @@ class ExerciseHistoryDetailViewController: UIViewController, UITableViewDelegate
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0 {
-            return "UNDONE EXERCISES"
+            return "하지 않은 운동"
         }
         else {
-            return "DONE EXERCISES"
+            return "완료한 운동"
         }
     }
     
