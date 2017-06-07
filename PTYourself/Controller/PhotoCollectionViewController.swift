@@ -14,19 +14,7 @@ class PhotoCollectionViewController: UICollectionViewController, UIImagePickerCo
     fileprivate var photoType:PhotoType = PhotoType.none
     fileprivate var selectedPhoto = Photo()
     
-    func setPhotoType(_ photoType:PhotoType) {
-        self.photoType = photoType
-    }
-    
-    func setData() {
-        let photoRealms = ModelManager.getData().bodyHistoryPhotos
-        if self.photoType == PhotoType.inbody {
-            self.photos = Array(photoRealms!.inbody.sorted(byKeyPath: "date", ascending: false))
-        }
-        else if self.photoType == PhotoType.body {
-            self.photos = Array(photoRealms!.body.sorted(byKeyPath: "date", ascending: false))
-        }
-    }
+    @IBOutlet var navigation: UINavigationItem!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -42,8 +30,23 @@ class PhotoCollectionViewController: UICollectionViewController, UIImagePickerCo
         longPressGesture.minimumPressDuration = 0.3
         longPressGesture.delegate = self
         self.collectionView?.addGestureRecognizer(longPressGesture)
-        
-        imagePicker.delegate = self
+        self.imagePicker.delegate = self
+    }
+    
+    func setPhotoType(_ photoType:PhotoType) {
+        self.photoType = photoType
+    }
+    
+    func setData() {
+        let photoRealms = ModelManager.getData().bodyHistoryPhotos
+        if self.photoType == PhotoType.inbody {
+            self.navigation.title = "인바디 기록"
+            self.photos = Array(photoRealms!.inbody.sorted(byKeyPath: "date", ascending: false))
+        }
+        else if self.photoType == PhotoType.body {
+            self.navigation.title = "눈바디 기록"
+            self.photos = Array(photoRealms!.body.sorted(byKeyPath: "date", ascending: false))
+        }
     }
     
     // MARK: - Image Editor

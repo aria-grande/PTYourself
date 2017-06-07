@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Look up your body!-->
+        <!--내 몸의 기록-->
         <scene sceneID="Csb-Ou-fFS">
             <objects>
                 <tableViewController storyboardIdentifier="BodyHistoryVC" id="yP7-JP-0Fj" customClass="BodyHistoryTableTableViewController" customModule="PTYourself" customModuleProvider="target" sceneMemberID="viewController">
@@ -92,7 +92,9 @@
                             <outlet property="delegate" destination="yP7-JP-0Fj" id="R58-O9-fS7"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Look up your body!" id="lPG-ZF-RhK"/>
+                    <navigationItem key="navigationItem" title="내 몸의 기록" id="lPG-ZF-RhK">
+                        <barButtonItem key="backBarButtonItem" title="기록 메뉴" id="Ucm-Vv-QRq"/>
+                    </navigationItem>
                     <connections>
                         <segue destination="eyi-1G-UVN" kind="show" identifier="showInbodyPhotos" id="pjn-jR-a3c"/>
                         <segue destination="eyi-1G-UVN" kind="show" identifier="showBodyPhotos" id="cCj-O3-x21"/>
@@ -179,7 +181,7 @@
                                 <rect key="frame" x="41.5" y="0.0" width="292" height="271"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="292" height="271"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="293" height="271"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016.03.16" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgH-Hp-16o">
@@ -227,6 +229,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="navigation" destination="q2L-VD-Guk" id="6k3-Zz-h8b"/>
                         <segue destination="WVz-2z-q5l" kind="show" identifier="showDetail" id="7np-4d-NED"/>
                     </connections>
                 </collectionViewController>
@@ -269,8 +272,8 @@
                                     <view contentMode="scaleToFill" restorationIdentifier="GraphView" translatesAutoresizingMaskIntoConstraints="NO" id="IS8-lg-Jb8">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="230"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Graph" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tng-Vs-XB0">
-                                                <rect key="frame" x="23" y="18.5" width="47.5" height="20.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="운동 목표 달성률!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tng-Vs-XB0">
+                                                <rect key="frame" x="23" y="19" width="117" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -353,7 +356,8 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Exercise Record" image="exerciseRecord-bar" selectedImage="exerciseRecord-bar" id="pGV-Ht-waJ"/>
-                    <navigationItem key="navigationItem" title="166cm, 50kg" id="ST5-M2-0y8">
+                    <navigationItem key="navigationItem" title="166cm / 50kg" id="ST5-M2-0y8">
+                        <barButtonItem key="backBarButtonItem" title="홈" id="8IF-lE-RQE"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="Jbo-7n-ziq">
                             <connections>
                                 <segue destination="0J9-gn-dHD" kind="show" id="y6a-Tc-oLf"/>
@@ -368,7 +372,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nu8-hu-u2G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="983" y="-827"/>
+            <point key="canvasLocation" x="981.60000000000002" y="-827.13643178410803"/>
         </scene>
         <!--ExerciseHistoryViewer-->
         <scene sceneID="OOH-qw-h5C">
@@ -382,8 +386,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Your Review" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7vZ-HG-vQC">
-                                <rect key="frame" x="16" y="79" width="110" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="운동하면서," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7vZ-HG-vQC">
+                                <rect key="frame" x="16" y="79" width="92" height="24"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -423,8 +427,8 @@
                                 </prototypes>
                                 <sections/>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exercise Record" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GjU-gX-ZOc">
-                                <rect key="frame" x="16" y="236" width="143.5" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="운동 기록" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GjU-gX-ZOc">
+                                <rect key="frame" x="16" y="236" width="74.5" height="24"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -444,7 +448,7 @@
                             <constraint firstItem="Wfd-9w-Nrf" firstAttribute="centerX" secondItem="Pxo-UN-wM1" secondAttribute="centerX" id="yyN-rQ-Jip"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Record on 2016.04.24" id="TjO-QZ-3Hc">
+                    <navigationItem key="navigationItem" title="2016.04.24" id="TjO-QZ-3Hc">
                         <barButtonItem key="backBarButtonItem" title="Back" id="ZCh-SL-Qiy"/>
                     </navigationItem>
                     <connections>
@@ -504,13 +508,13 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How do you feel today?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OzS-Au-iPy">
-                                <rect key="frame" x="16" y="78" width="210.5" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘 운동은 어때요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OzS-Au-iPy">
+                                <rect key="frame" x="16" y="78" width="159" height="21"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check what you've done!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ep-YS-HRe">
-                                <rect key="frame" x="16" y="230" width="226.5" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="한 운동 체크하기 :)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ep-YS-HRe">
+                                <rect key="frame" x="16" y="230" width="149" height="24"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -532,8 +536,8 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Record your exercise today" id="845-z2-N9j">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="wYT-jo-yuB">
+                    <navigationItem key="navigationItem" title="오늘의 운동 기록" id="845-z2-N9j">
+                        <barButtonItem key="rightBarButtonItem" title="저장" id="wYT-jo-yuB">
                             <connections>
                                 <action selector="saveRecord:" destination="0J9-gn-dHD" id="vdQ-OW-xQV"/>
                             </connections>
@@ -585,7 +589,7 @@
             </objects>
             <point key="canvasLocation" x="-671" y="-302"/>
         </scene>
-        <!--Setting-->
+        <!--설정-->
         <scene sceneID="RJt-UL-vTq">
             <objects>
                 <tableViewController storyboardIdentifier="MoreVC" id="DLi-b3-OD5" sceneMemberID="viewController">
@@ -603,8 +607,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Body Information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qoa-yX-aSe">
-                                                    <rect key="frame" x="21" y="17" width="131" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내 몸의 현황" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qoa-yX-aSe">
+                                                    <rect key="frame" x="21" y="17" width="82.5" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -626,8 +630,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exercise List" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9CW-Cy-TXp">
-                                                    <rect key="frame" x="21" y="17" width="96" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="운동 목록 관리" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9CW-Cy-TXp">
+                                                    <rect key="frame" x="21" y="17" width="97.5" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -650,13 +654,15 @@
                             <outlet property="delegate" destination="DLi-b3-OD5" id="Qzt-4C-XVh"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Setting" id="Tot-el-Roy"/>
+                    <navigationItem key="navigationItem" title="설정" id="Tot-el-Roy">
+                        <barButtonItem key="backBarButtonItem" title="설정" id="RPk-sz-ys6"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pYW-sW-F4G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="884" y="1538"/>
         </scene>
-        <!--Body Information-->
+        <!--내 몸의 현황-->
         <scene sceneID="GEk-9R-ogG">
             <objects>
                 <viewController storyboardIdentifier="BodyInfoVC" id="i2T-ap-iJM" customClass="BodyInformationViewController" customModule="PTYourself" customModuleProvider="target" sceneMemberID="viewController">
@@ -720,7 +726,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rlD-yV-3MU" userLabel="Error message">
                                 <rect key="frame" x="30" y="242" width="314" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.99903732540000001" green="0.2035219073" blue="0.37688690419999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -733,8 +739,8 @@
                             <constraint firstItem="rlD-yV-3MU" firstAttribute="leading" secondItem="yXQ-Wa-9xp" secondAttribute="leadingMargin" constant="14" id="qkI-hi-AgO"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Body Information" id="BMJ-8v-ZLx">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Yr1-td-cc5">
+                    <navigationItem key="navigationItem" title="내 몸의 현황" id="BMJ-8v-ZLx">
+                        <barButtonItem key="rightBarButtonItem" title="저장" id="Yr1-td-cc5">
                             <connections>
                                 <action selector="save:" destination="i2T-ap-iJM" id="AOj-WE-0gd"/>
                             </connections>
@@ -771,7 +777,7 @@
             </objects>
             <point key="canvasLocation" x="222" y="1538"/>
         </scene>
-        <!--Exercise List-->
+        <!--운동 목록-->
         <scene sceneID="H3j-sp-zsZ">
             <objects>
                 <viewController storyboardIdentifier="ExerciseListVC" id="12L-Qt-bNA" customClass="ExerciseListViewController" customModule="PTYourself" customModuleProvider="target" sceneMemberID="viewController">
@@ -799,7 +805,7 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Exercise List" id="Uqa-bq-7gA">
+                    <navigationItem key="navigationItem" title="운동 목록" id="Uqa-bq-7gA">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Lfk-1G-Eoz">
                             <connections>
                                 <segue destination="KEm-Wt-TsR" kind="show" identifier="addNewExercise" id="YMT-M9-54i"/>
@@ -852,7 +858,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="운동 등록" id="DYf-eH-ylF">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="iMl-dH-okg">
+                        <barButtonItem key="rightBarButtonItem" title="저장" id="iMl-dH-okg">
                             <connections>
                                 <action selector="saveNewExercise:" destination="KEm-Wt-TsR" id="YTL-3a-3Tt"/>
                             </connections>

@@ -24,13 +24,11 @@ class ExerciseRecordViewController: UIViewController, UITableViewDelegate, UITab
         recordTableView.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
         
         graphView.addSubview(chart)
-        loadDynamicData()   // todo : check and delete the line
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         loadDynamicData()
-        self.recordTableView.reloadData()
     }
     
     override func viewWillLayoutSubviews() {
@@ -77,7 +75,7 @@ class ExerciseRecordViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     fileprivate func setNavigationHeader() {
-        header.title = "\(self.bodyInformation.height)cm, \(self.bodyInformation.weight)kg"
+        header.title = "\(self.bodyInformation.height)cm / \(self.bodyInformation.weight)kg"
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
