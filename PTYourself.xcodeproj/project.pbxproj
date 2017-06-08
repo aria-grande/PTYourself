@@ -12,6 +12,7 @@
 		DE3F3F961CCA13B5001D937F /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3F3F951CCA13B5001D937F /* Util.swift */; };
 		DE6E584A1EE4E705004ECA61 /* inbody_result.png in Resources */ = {isa = PBXBuildFile; fileRef = DE6E58491EE4E705004ECA61 /* inbody_result.png */; };
 		DE6E584C1EE4E7E9004ECA61 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE6E584B1EE4E7E9004ECA61 /* Info.plist */; };
+		DE9286621EE9119800BF1E8A /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9286611EE9119800BF1E8A /* FeedbackViewController.swift */; };
 		DE98ED681CCDF83E00385EA0 /* AddNewExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE98ED5C1CCDF83E00385EA0 /* AddNewExerciseViewController.swift */; };
 		DE98ED691CCDF83E00385EA0 /* BodyHistoryTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE98ED5D1CCDF83E00385EA0 /* BodyHistoryTableTableViewController.swift */; };
 		DE98ED6A1CCDF83E00385EA0 /* BodyInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE98ED5E1CCDF83E00385EA0 /* BodyInformationViewController.swift */; };
@@ -67,6 +68,7 @@
 		DE3F3F951CCA13B5001D937F /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		DE6E58491EE4E705004ECA61 /* inbody_result.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = inbody_result.png; sourceTree = "<group>"; };
 		DE6E584B1EE4E7E9004ECA61 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE9286611EE9119800BF1E8A /* FeedbackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
 		DE98ED5C1CCDF83E00385EA0 /* AddNewExerciseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewExerciseViewController.swift; sourceTree = "<group>"; };
 		DE98ED5D1CCDF83E00385EA0 /* BodyHistoryTableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyHistoryTableTableViewController.swift; sourceTree = "<group>"; };
 		DE98ED5E1CCDF83E00385EA0 /* BodyInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyInformationViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				DE98ED621CCDF83E00385EA0 /* PhotoCollectionViewController.swift */,
 				DE98ED631CCDF83E00385EA0 /* PhotoScrollViewController.swift */,
 				DE98ED641CCDF83E00385EA0 /* RecordExerciseViewController.swift */,
+				DE9286611EE9119800BF1E8A /* FeedbackViewController.swift */,
 				DE98ED651CCDF83E00385EA0 /* ViewController.swift */,
 			);
 			path = Controller;
@@ -395,6 +398,7 @@
 				DE98ED691CCDF83E00385EA0 /* BodyHistoryTableTableViewController.swift in Sources */,
 				DE98ED841CCE015900385EA0 /* PhotoCollectionViewCell.swift in Sources */,
 				DECFBD8D1C9C4800006B1AE6 /* AppDelegate.swift in Sources */,
+				DE9286621EE9119800BF1E8A /* FeedbackViewController.swift in Sources */,
 				DE98ED801CCE014E00385EA0 /* Record.swift in Sources */,
 				DE98ED7C1CCE014E00385EA0 /* Body.swift in Sources */,
 				DE98ED7F1CCE014E00385EA0 /* Photo.swift in Sources */,
