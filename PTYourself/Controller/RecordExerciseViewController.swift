@@ -29,6 +29,10 @@ class RecordExerciseViewController: UIViewController, UITableViewDelegate, UITab
         setData()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        self.memo.becomeFirstResponder()
+    }
+    
     @IBAction func saveRecord(_ sender: AnyObject) {
         let missionCompleteRate = Util.calculateMissionCompleteRate(todayExerciseList)
         if self.recordIsNowCreated {

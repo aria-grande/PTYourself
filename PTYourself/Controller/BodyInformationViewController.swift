@@ -3,7 +3,7 @@ import RealmSwift
 
 class BodyInformationViewController: UIViewController {
 
-    fileprivate let errorMessage = "fill the information correctly"
+    fileprivate let errorMessage = "올바르지 않은 형태입니다."
     
     fileprivate var data:Root = Root();
     fileprivate let realm = try! Realm()
@@ -32,5 +32,9 @@ class BodyInformationViewController: UIViewController {
         let body = data.bodyInformation
         height.text = String(body!.height)
         weight.text = String(body!.weight)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.weight.becomeFirstResponder()
     }
 }

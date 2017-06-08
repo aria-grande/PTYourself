@@ -17,6 +17,10 @@ class AddNewExerciseViewController: UIViewController {
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        self.newExercise.becomeFirstResponder()
+    }
+    
     @IBAction func saveNewExercise(_ sender: AnyObject) {
         if let newName = newExercise.text, !newName.isEmpty {
             if let exec = editingExercise, onEdit {
